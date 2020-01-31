@@ -1,26 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace _Scripts.Tiles
 {
     public class EnvironmentView : MonoBehaviour
     {
-        [Serializable]
-        private class Entry
-        {
-            public EnvironmentType Type;
-            public Material Material;
-        }
-        
         [SerializeField] private EnvironmentType _type;
-        [SerializeField] private Renderer _sprite;
-        [SerializeField] private List<Entry> _colors;
+
+        [Space]
+        [SerializeField] private GameObject _seaTile;
+        [SerializeField] private GameObject _grasslandTile;
+        [SerializeField] private GameObject _swampTile;
+        [SerializeField] private GameObject _desertTile;
+        [SerializeField] private GameObject _mountainTile;
 
         private void OnValidate()
         {
-            _sprite.material = _colors.First(entry => entry.Type == _type).Material;
+            _seaTile.SetActive(_type == EnvironmentType.Sea);
+            _grasslandTile.SetActive(_type == EnvironmentType.Grassland);
+            _swampTile.SetActive(_type == EnvironmentType.Swamp);
+            _desertTile.SetActive(_type == EnvironmentType.Desert);
+            _mountainTile.SetActive(_type == EnvironmentType.Mountain);
         }
     }
 }
