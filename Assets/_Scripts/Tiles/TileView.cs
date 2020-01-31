@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Scripts.Tiles
 {
-    public class EnvironmentView : MonoBehaviour
+    public class TileView : MonoBehaviour
     {
         [SerializeField] private EnvironmentType _type;
 
