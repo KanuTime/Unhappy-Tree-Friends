@@ -10908,8 +10908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bottomLeftCorner: {fileID: 7982915014614429340}
-  _width: 11
-  _height: 11
 --- !u!1001 &1133486854
 PrefabInstance:
   m_ObjectHideFlags: 0
