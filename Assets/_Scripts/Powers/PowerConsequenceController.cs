@@ -28,6 +28,8 @@ namespace _Scripts.Powers
             var selectedPower = _selectedPowerModel.SelectedPower.Value;
             var clickedEnvironmentType = tileModel.Type.Value;
 
+            if (selectedPower == PowerType.None) Debug.Log("No Power Selected");
+
             foreach (var consequenceSetup in _consequenceData.Consequences)
             {
                 if (consequenceSetup._power == selectedPower && consequenceSetup._environment == clickedEnvironmentType)
