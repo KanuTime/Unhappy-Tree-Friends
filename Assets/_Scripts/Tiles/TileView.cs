@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Scripts.Growth;
 using _Scripts.Utility;
 using UnityEngine;
 using Zenject;
@@ -31,6 +32,8 @@ namespace _Scripts.Tiles
             
             Container.BindInterfacesTo<HumanityDegreePresenter>().AsSingle().WithArguments(_humans);
             Container.BindInterfacesTo<NatureDegreePresenter>().AsSingle().WithArguments(_nature);
+            
+            Container.BindInterfacesTo<GrowthSystem>().AsSingle();
         }
     }
 }
