@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: ConsequenceConfig
   m_EditorClassIdentifier: 
   _consequences:
-  - _type: 0
+  - _environment: 0
+    _power: 1
+    _consequence: 0
+  - _environment: 0
     _power: 0
     _consequence: 0
