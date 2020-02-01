@@ -508,10 +508,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2816353619226640207}
+  - component: {fileID: 7960051062196248638}
   - component: {fileID: 754568992563904945}
-  - component: {fileID: -9021242286489167943}
   m_Layer: 8
-  m_Name: Tile
+  m_Name: Tile Edit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,6 +537,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7960051062196248638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111743412723419445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc3de6719af23f4da1d035cfb0b41eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 3
+  _seaTile: {fileID: 3629799366189935296}
+  _grasslandTile: {fileID: 6078298708272990473}
+  _swampTile: {fileID: 2836222335332152321}
+  _desertTile: {fileID: 5955937710206019554}
+  _mountainTile: {fileID: 668955229183055399}
 --- !u!65 &754568992563904945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -550,23 +568,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-9021242286489167943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4111743412723419445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5cd0af2bfc4248bcd1acaa7a3d9a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _seaTile: {fileID: 3629799366189935296}
-  _grasslandTile: {fileID: 6078298708272990473}
-  _swampTile: {fileID: 2836222335332152321}
-  _desertTile: {fileID: 5955937710206019554}
-  _mountainTile: {fileID: 668955229183055399}
 --- !u!1 &5955937710206019554
 GameObject:
   m_ObjectHideFlags: 0
