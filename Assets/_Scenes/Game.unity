@@ -388,6 +388,7 @@ MonoBehaviour:
   _powerEarthImage: {fileID: 93034833}
   _powerWaterButton: {fileID: 1028260799}
   _powerWaterImage: {fileID: 322158152}
+  _environmentChangeDelay: 1
 --- !u!114 &652265530
 MonoBehaviour:
   m_ObjectHideFlags: 0

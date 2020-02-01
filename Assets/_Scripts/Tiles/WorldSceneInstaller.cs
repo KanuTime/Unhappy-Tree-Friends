@@ -19,12 +19,17 @@ namespace _Scripts
         [SerializeField] private SoundEffects _soundEffects;
         [SerializeField] private Slider _natureIntensity;
         [SerializeField] private Slider _humanIntensity;
+        
+        [Header("Buttons")]
         [SerializeField] private Button _powerWindButton;
         [SerializeField] private Image _powerWindImage;
         [SerializeField] private Button _powerEarthButton;
         [SerializeField] private Image _powerEarthImage;
         [SerializeField] private Button _powerWaterButton;
         [SerializeField] private Image _powerWaterImage;
+
+        [Header("Config")] 
+        [SerializeField] private float _environmentChangeDelay;
         
         public override void InstallBindings()
         {
@@ -54,7 +59,7 @@ namespace _Scripts
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
             
             Container.BindInterfacesTo<KillingEffectSystem>().AsSingle();
-            Container.BindInterfacesTo<EnvironmentChangeEffectSystem>().AsSingle();
+            Container.BindInterfacesTo<EnvironmentChangeEffectSystem>().AsSingle().WithArguments(_environmentChangeDelay);
             
             Container.BindInterfacesTo<BalanceModel>().AsSingle();
             Container.BindInterfacesTo<BalancePresenter>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
