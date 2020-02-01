@@ -7,12 +7,12 @@ namespace _Scripts.Powers
 {
     public class PowerPresenter : Subscription
     {
-        [Inject] private IPowerModel _powerModel;
+        [Inject] private ISelectedPowerModel _selectedPowerModel;
 
 
         public override void Initialize()
         {
-            _powerModel.SelectedPower.Subscribe(OnSelectedPowerChanged).AddTo(_disposer);
+            _selectedPowerModel.SelectedPower.Subscribe(OnSelectedPowerChanged).AddTo(_disposer);
         }
 
         private void OnSelectedPowerChanged(PowerType selectedPowerType)

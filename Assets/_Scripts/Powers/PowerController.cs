@@ -9,7 +9,7 @@ namespace _Scripts.Powers
 {
     public class PowerController : Subscription
     {
-        [Inject] private IPowerModel _powerModel;
+        [Inject] private ISelectedPowerModel _selectedPowerModel;
 
         [Inject] private Button _button;
         [Inject] private Text _text;
@@ -24,7 +24,7 @@ namespace _Scripts.Powers
         private void OnButtonClick()
         {
             Debug.Log($"Button with type {_type} clicked.");
-            _powerModel.SelectedPower.Value = _type;
+            _selectedPowerModel.SelectedPower.Value = _type;
         }
     }
 }
