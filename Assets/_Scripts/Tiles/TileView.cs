@@ -40,7 +40,7 @@ namespace _Scripts.Tiles
             Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Humans);
             Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Nature);
             
-            
+            Container.BindInterfacesTo<SpreadIncreaseSystem>().AsSingle();
         }
     }
 }

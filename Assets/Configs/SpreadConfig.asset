@@ -103,7 +103,7 @@ MonoBehaviour:
   - Faction: 1
     Position: {x: 2, y: 3}
     Intensity: 1
-  _spreadMaximum: 0
+  _spreadMaximum: 100
   _humanGrowth:
   - Degree: 1
     TimeTilNextStage: 5
