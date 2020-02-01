@@ -15,18 +15,48 @@ namespace _Scripts.Effects
 
     public interface ISoundManager
     {
-        void PlayTestSound();
-        void PlayTestSound2();
+        void TileCreateCity();
+        void TileCreateDesert();
+        void TileCreateGrass();
+        void TileCreateMountain();
+        void TileCreatePioneer();
+        void TileCreateSwamp();
+        void TileCreateTree();
+        void TileCreateVillage();
+        void TileCreateWater();
+        void TileDestroyHumans();
+        void TileDestroyNature();
+        void UISelectTile();
     }
     
     [CreateAssetMenu(menuName = "Configs/Sound")]
     public class SoundConfig : ScriptableObjectInstaller, ISoundManager
     {
-        [SerializeField] private SoundEntry _testSound;
-        [SerializeField] private SoundEntry _testSound2;
+        [SerializeField] private SoundEntry _TileCreateCity;
+        [SerializeField] private SoundEntry _TileCreateDesert;
+        [SerializeField] private SoundEntry _TileCreateGrass;
+        [SerializeField] private SoundEntry _TileCreateMountain;
+        [SerializeField] private SoundEntry _TileCreatePioneer;
+        [SerializeField] private SoundEntry _TileCreateSwamp;
+        [SerializeField] private SoundEntry _TileCreateTree;
+        [SerializeField] private SoundEntry _TileCreateVillage;
+        [SerializeField] private SoundEntry _TileCreateWater;
+        [SerializeField] private SoundEntry _TileDestroyHumans;
+        [SerializeField] private SoundEntry _TileDestroyNature;
+        [SerializeField] private SoundEntry _UISelectTile;
 
-        public void PlayTestSound() => PlaySound(_testSound);
-        public void PlayTestSound2() => PlaySound(_testSound2);
+        public void TileCreateCity() => PlaySound(_TileCreateCity);
+        public void TileCreateDesert() => PlaySound(_TileCreateDesert);
+        public void TileCreateGrass() => PlaySound(_TileCreateGrass);
+        public void TileCreateMountain() => PlaySound(_TileCreateMountain);
+        public void TileCreatePioneer() => PlaySound(_TileCreatePioneer);
+        public void TileCreateSwamp() => PlaySound(_TileCreateSwamp);
+        public void TileCreateTree() => PlaySound(_TileCreateTree);
+        public void TileCreateVillage() => PlaySound(_TileCreateVillage);
+        public void TileCreateWater() => PlaySound(_TileCreateWater);
+        public void TileDestroyHumans() => PlaySound(_TileDestroyHumans);
+        public void TileDestroyNature() => PlaySound(_TileDestroyNature);
+        public void UISelectTile() => PlaySound(_UISelectTile);
         
         private void PlaySound(SoundEntry entry)
         {

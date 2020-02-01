@@ -10,21 +10,21 @@ namespace _Scripts.Utility
     [CreateAssetMenu(menuName = "Installer/Prefab Installer")]
     public class PrefabInstaller : ScriptableObjectInstaller
     {
-        [SerializeField] private TileView _tile;
         [FormerlySerializedAs("_powerSelectionView")] [SerializeField] private PowerView _powerView;
         [SerializeField] private MountainView _mountain;
         [SerializeField] private GrasslandView _grassland;
         [SerializeField] private DesertView _desert;
         [SerializeField] private SwampView _swamp;
+        [SerializeField] private SeaView _sea;
         
         public override void InstallBindings()
         {
-            BindViewFactory(_tile);
             BindViewFactory(_powerView);
             BindViewFactory(_mountain);
             BindViewFactory(_grassland);
             BindViewFactory(_desert);
             BindViewFactory(_swamp);
+            BindViewFactory(_sea);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component

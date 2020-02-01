@@ -21,11 +21,11 @@ namespace _Scripts.Tiles
         [Inject] private IGridEdit _gridEdit;
         [Inject] private ISpreadData _spreadData;
         
-        [Inject] private IViewFactory<TileView> _viewFactory;
         [Inject] private IViewFactory<MountainView> _mountainFactory;
         [Inject] private IViewFactory<GrasslandView> _grassFactory;
         [Inject] private IViewFactory<DesertView> _desertFactory;
         [Inject] private IViewFactory<SwampView> _swampFactory;
+        [Inject] private IViewFactory<SeaView> _seaFactory;
 
         private readonly Dictionary<Vector2Int, ITileModel> _tiles = new Dictionary<Vector2Int, ITileModel>();
         private int _maxX;
@@ -56,7 +56,7 @@ namespace _Scripts.Tiles
             switch (model.Type.Value)
             {
                 case EnvironmentType.Sea:
-                    _viewFactory.Create(position, model);
+                    _seaFactory.Create(position, model);
                     break;
                 case EnvironmentType.Grassland:
                     _grassFactory.Create(position, model);

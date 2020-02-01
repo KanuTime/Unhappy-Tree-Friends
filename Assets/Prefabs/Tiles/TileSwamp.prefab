@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b68a8f9f47cca22a0078918641ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seaTile: {fileID: 0}
   _humans:
   - {fileID: 4297749585192724347}
   - {fileID: 1819155266957786076}
@@ -74,7 +73,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2445471994887973317
 GameObject:
