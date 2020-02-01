@@ -46,8 +46,7 @@ namespace _Scripts.Powers
                     break;
             }
 
-            Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType);
-            Container.BindInterfacesTo<PowerPresenter>().AsSingle().WithArguments(_button, _powerType, _text, _image, sprite);
+            
         }
 
         public override void ResetView()

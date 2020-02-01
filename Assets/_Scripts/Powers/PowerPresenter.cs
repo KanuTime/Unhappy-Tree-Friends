@@ -12,14 +12,9 @@ namespace _Scripts.Powers
         [Inject] private Image _image;
         [Inject] private PowerType _powerType;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
-        [Inject] private Text _text;
-        [Inject] private Sprite _sprite;
 
         public override void Initialize()
         {
-            _text.text = _powerType.ToString();
-            _image.sprite = _sprite;
-
             _selectedPowerModel.SelectedPower
                 .Subscribe(SelectedChanged)
                 .AddTo(_disposer);

@@ -19,6 +19,12 @@ namespace _Scripts
         [SerializeField] private SoundEffects _soundEffects;
         [SerializeField] private Slider _natureIntensity;
         [SerializeField] private Slider _humanIntensity;
+        [SerializeField] private Button _powerWindButton;
+        [SerializeField] private Image _powerWindImage;
+        [SerializeField] private Button _powerEarthButton;
+        [SerializeField] private Image _powerEarthImage;
+        [SerializeField] private Button _powerWaterButton;
+        [SerializeField] private Image _powerWaterImage;
         
         public override void InstallBindings()
         {
@@ -37,7 +43,12 @@ namespace _Scripts
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
 
             Container.BindInterfacesTo<SelectedPowerModel>().AsSingle();
-            Container.BindInterfacesTo<PowerSelectionSystem>().AsSingle().WithArguments(_canvas);
+            Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerWindButton, PowerType.Wind);
+            Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerEarthButton, PowerType.Earth);
+            Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerWaterButton, PowerType.Water);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerWindButton, PowerType.Wind, _powerWindImage);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerEarthButton, PowerType.Earth, _powerEarthImage);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerWaterButton, PowerType.Water, _powerWaterImage);
 
             Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
