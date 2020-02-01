@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 963194227}
+  _canvas: {fileID: 0}
   _tileLayer:
     serializedVersion: 2
     m_Bits: 256
