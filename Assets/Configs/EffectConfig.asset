@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5294e1de237c4fa5a6087eb4310f7a85, type: 3}
   m_Name: EffectConfig
   m_EditorClassIdentifier: 
-  _effects: []
+  _effects:
+  - Environment: 1
+    ConsequenceType: 6
+    Effects:
+    - Effect: 0
+      Environment: 0
+      Intensity: 0
+    - Effect: 1
+      Environment: 0
+      Intensity: 0
+    - Effect: 2
+      Environment: 0
+      Intensity: 0
+  - Environment: 0
+    ConsequenceType: 0
+    Effects: []

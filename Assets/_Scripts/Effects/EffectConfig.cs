@@ -29,14 +29,21 @@ namespace _Scripts.Effects
         public List<EffectData> Effects;
     }
 
+    public interface IEffectData
+    {
+        IReadOnlyList<EffectSetup> Effects { get; }
+    }
+
     [CreateAssetMenu(menuName = "Configs/Effects")]
-    public class EffectConfig : ScriptableObjectInstaller
+    public class EffectConfig : ScriptableObjectInstaller, IEffectData
     {
         [SerializeField] private List<EffectSetup> _effects;
 
+        public IReadOnlyList<EffectSetup> Effects => _effects;
+
         public override void InstallBindings()
         {
-
+            Container.Bind<IEffectData>().FromInstance(this);
         }
     }
 }
