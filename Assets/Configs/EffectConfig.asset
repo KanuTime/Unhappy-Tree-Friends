@@ -13,18 +13,105 @@ MonoBehaviour:
   m_Name: EffectConfig
   m_EditorClassIdentifier: 
   _effects:
-  - Environment: 1
+  - Environment: 0
+    ConsequenceType: 1
+    Effects:
+    - Effect: 0
+      Environment: 4
+      Intensity: 0
+    - Effect: 1
+      Environment: 4
+      Intensity: 2
+  - Environment: 0
+    ConsequenceType: 4
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 2
+  - Environment: 0
+    ConsequenceType: 0
+    Effects: []
+  - Environment: 2
+    ConsequenceType: 2
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 5
+    - Effect: 1
+      Environment: 0
+      Intensity: 2
+  - Environment: 2
+    ConsequenceType: 5
+    Effects:
+    - Effect: 0
+      Environment: 1
+      Intensity: 0
+  - Environment: 2
     ConsequenceType: 6
     Effects:
     - Effect: 0
       Environment: 0
       Intensity: 0
-    - Effect: 1
-      Environment: 0
+  - Environment: 1
+    ConsequenceType: 1
+    Effects:
+    - Effect: 0
+      Environment: 3
       Intensity: 0
     - Effect: 2
       Environment: 0
+      Intensity: 1
+  - Environment: 1
+    ConsequenceType: 3
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 1
+  - Environment: 1
+    ConsequenceType: 6
+    Effects:
+    - Effect: 0
+      Environment: 2
       Intensity: 0
-  - Environment: 0
-    ConsequenceType: 0
-    Effects: []
+  - Environment: 3
+    ConsequenceType: 1
+    Effects:
+    - Effect: 0
+      Environment: 4
+      Intensity: 0
+  - Environment: 3
+    ConsequenceType: 4
+    Effects:
+    - Effect: 0
+      Environment: 1
+      Intensity: 0
+    - Effect: 2
+      Environment: 0
+      Intensity: 2
+  - Environment: 3
+    ConsequenceType: 3
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 1
+  - Environment: 4
+    ConsequenceType: 1
+    Effects:
+    - Effect: 0
+      Environment: 3
+      Intensity: 0
+  - Environment: 4
+    ConsequenceType: 2
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 5
+    - Effect: 1
+      Environment: 0
+      Intensity: 5
+  - Environment: 4
+    ConsequenceType: 5
+    Effects:
+    - Effect: 2
+      Environment: 0
+      Intensity: 3
