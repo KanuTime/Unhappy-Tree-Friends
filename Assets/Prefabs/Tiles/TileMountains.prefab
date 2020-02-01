@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7444224425878075172}
-  - component: {fileID: 3260193912543601441}
+  - component: {fileID: -5544489205604745092}
   m_Layer: 0
   m_Name: TileMountains
   m_TagString: Untagged
@@ -270,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 5842412764633056567}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1090413590067667996}
   - {fileID: 2465024127388654045}
@@ -281,7 +281,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3260193912543601441
+--- !u!114 &-5544489205604745092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,14 +290,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5842412764633056567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5cd0af2bfc4248bcd1acaa7a3d9a66, type: 3}
+  m_Script: {fileID: 11500000, guid: 756a4e6b8b43412d8dc34e7e28ae8f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _seaTile: {fileID: 0}
   _grasslandTile: {fileID: 0}
   _swampTile: {fileID: 0}
   _desertTile: {fileID: 0}
-  _mountainTile: {fileID: 0}
   _humans:
   - {fileID: 5031966663321210872}
   - {fileID: 5031966663655960641}
@@ -305,11 +304,11 @@ MonoBehaviour:
   - {fileID: 5031966664853079688}
   - {fileID: 5031966665042436719}
   _nature:
-  - {fileID: 5010086925464876655}
-  - {fileID: 5010086926575144751}
-  - {fileID: 7775278616513429485}
-  - {fileID: 5010086925355207261}
   - {fileID: 5010086925568102065}
+  - {fileID: 5010086925355207261}
+  - {fileID: 7775278616513429485}
+  - {fileID: 5010086926575144751}
+  - {fileID: 5010086925464876655}
 --- !u!1001 &888818078818790813
 PrefabInstance:
   m_ObjectHideFlags: 0

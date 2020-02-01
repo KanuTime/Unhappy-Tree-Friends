@@ -13,7 +13,6 @@ namespace _Scripts.Tiles
         [SerializeField] private GameObject _grasslandTile;
         [SerializeField] private GameObject _swampTile;
         [SerializeField] private GameObject _desertTile;
-        [SerializeField] private GameObject _mountainTile;
 
         [SerializeField] private List<GameObject> _humans;
         [SerializeField] private List<GameObject> _nature;
@@ -25,11 +24,10 @@ namespace _Scripts.Tiles
         {
             Container.Bind<ITileModel>().FromInstance(_model);
             
-            _seaTile.SetActive(_model.Type.Value == EnvironmentType.Sea);
-            _grasslandTile.SetActive(_model.Type.Value == EnvironmentType.Grassland);
-            _swampTile.SetActive(_model.Type.Value == EnvironmentType.Swamp);
-            _desertTile.SetActive(_model.Type.Value == EnvironmentType.Desert);
-            _mountainTile.SetActive(_model.Type.Value == EnvironmentType.Mountain);
+            if (_seaTile != null) _seaTile.SetActive(_model.Type.Value == EnvironmentType.Sea);
+            if (_grasslandTile != null) _grasslandTile.SetActive(_model.Type.Value == EnvironmentType.Grassland);
+            if (_swampTile != null) _swampTile.SetActive(_model.Type.Value == EnvironmentType.Swamp);
+            if (_desertTile != null) _desertTile.SetActive(_model.Type.Value == EnvironmentType.Desert);
             
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_humans, Faction.Humans);
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_nature, Faction.Nature);
@@ -42,7 +40,7 @@ namespace _Scripts.Tiles
             Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Humans);
             Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Nature);
             
-            
+            Container.BindInterfacesTo<SpreadIncreaseSystem>().AsSingle();
         }
     }
 }

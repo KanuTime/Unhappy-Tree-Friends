@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Factions;
+using _Scripts.Tiles.Types;
 using _Scripts.Utility;
 using UnityEngine;
 using Zenject;
@@ -17,8 +18,10 @@ namespace _Scripts.Tiles
         private const int K_offset = 5;
         
         [Inject] private IGridEdit _gridEdit;
-        [Inject] private IViewFactory<TileView> _viewFactory;
         [Inject] private ISpreadData _spreadData;
+        
+        [Inject] private IViewFactory<TileView> _viewFactory;
+        [Inject] private IViewFactory<MountainView> _mountainFactory;
 
         private readonly Dictionary<Vector2Int, ITileModel> _tiles = new Dictionary<Vector2Int, ITileModel>();
         private int _maxX;
@@ -35,13 +38,21 @@ namespace _Scripts.Tiles
                 
                 var tileModel = new TileModel(tile.Key, tile.Value, humanityDegree, natureDegree);
                 _tiles[tile.Key] = tileModel;
-                _viewFactory.Create(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tileModel);
+                CreateView(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tileModel);
 
                 if (tile.Key.x > _maxX)
                     _maxX = tile.Key.x;
                 if (tile.Key.y > _maxY)
                     _maxY = tile.Key.y;
             }
+        }
+
+        private void CreateView(Vector3 position, ITileModel model)
+        {
+            if (model.Type.Value == EnvironmentType.Mountain)
+                _mountainFactory.Create(position, model);
+            else 
+                _viewFactory.Create(position, model);
         }
 
         public IEnumerable<ITileModel> AdjacentTiles(Vector2Int position)
