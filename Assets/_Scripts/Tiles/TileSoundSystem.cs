@@ -21,21 +21,19 @@ namespace _Scripts.Tiles
             switch (pair.Current)
             {
                 case EnvironmentType.Desert:
-                    _soundManager.TileCreateDesert();
+                    _soundManager.PlaySound(SoundType.CreateDesert);
                     break;
                 case EnvironmentType.Grassland:
-                    _soundManager.TileCreateGrass();
+                    _soundManager.PlaySound(SoundType.CreateGrass);
                     break;
                 case EnvironmentType.Mountain:
-                    _soundManager.TileCreateMountain();
+                    _soundManager.PlaySound(SoundType.CreateMountain);
                     break;
                 case EnvironmentType.Sea:
-                    _soundManager.TileCreateWater();
+                    _soundManager.PlaySound(SoundType.CreateWater);
                     break;
                 case EnvironmentType.Swamp:
-                    _soundManager.TileCreateSwamp();
-                    break;
-                default:
+                    _soundManager.PlaySound(SoundType.CreateSwamp);
                     break;
             }
         }

@@ -12,51 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ec0a19b98445388e45d1bde059f2de, type: 3}
   m_Name: SoundConfig
   m_EditorClassIdentifier: 
-  _TileCreateCity:
+  _entries:
+  - Type: 0
     Audio: {fileID: 8300000, guid: 751ce730376e7450b9c4fb4da07f9512, type: 3}
     Volume: 1
-  _TileCreateDesert:
+  - Type: 1
     Audio: {fileID: 8300000, guid: 8ff7f59a8866a4ec1b2f3e0962e71a1f, type: 3}
     Volume: 1
-  _TileCreateGrass:
+  - Type: 2
     Audio: {fileID: 8300000, guid: a986fc8d5c1b44b149699432a62b941a, type: 3}
     Volume: 1
-  _TileCreateMountain:
+  - Type: 3
     Audio: {fileID: 8300000, guid: acfa55970c0c84a989893b551620fd57, type: 3}
     Volume: 1
-  _TileCreatePioneer:
+  - Type: 4
     Audio: {fileID: 8300000, guid: 8dd88d53df9a94932a10ab4a7a48cf6e, type: 3}
     Volume: 1
-  _TileCreateSwamp:
+  - Type: 5
     Audio: {fileID: 8300000, guid: 6d8f9252289bb491c8d103459b3b4e1a, type: 3}
     Volume: 1
-  _TileCreateTree:
+  - Type: 6
     Audio: {fileID: 8300000, guid: ca6f8a58eff1542ff8c6c5999b0a521c, type: 3}
     Volume: 1
-  _TileCreateVillage:
+  - Type: 7
     Audio: {fileID: 8300000, guid: 996802ac55312440498d5fc71c1c659e, type: 3}
     Volume: 1
-  _TileCreateWater:
+  - Type: 8
     Audio: {fileID: 8300000, guid: b91e1ec1c77654dc1b569b61853df632, type: 3}
     Volume: 1
-  _TileDestroyHumans:
+  - Type: 9
     Audio: {fileID: 8300000, guid: 3a4baa4cba0284063b4af558c56ebd25, type: 3}
     Volume: 1
-  _TileDestroyNature:
+  - Type: 10
     Audio: {fileID: 8300000, guid: ef868cfb8e6e44005a2bcba84f161b92, type: 3}
     Volume: 1
-  _UISelectTile:
+  - Type: 11
     Audio: {fileID: 8300000, guid: f7df9b90fbca147078d4193f517365e6, type: 3}
     Volume: 0.3
-  _Power_Bees:
+  - Type: 12
     Audio: {fileID: 8300000, guid: c7720d0de064b453399104fb1422e800, type: 3}
     Volume: 1
-  _Power_Earthquake:
+  - Type: 13
     Audio: {fileID: 8300000, guid: 3751c5aeba31749ce98229258130e151, type: 3}
     Volume: 1
-  _Power_Flood:
+  - Type: 14
     Audio: {fileID: 8300000, guid: 1ad87fd8053a440ef9e6f71e6c113170, type: 3}
     Volume: 0.8
-  _Power_Tornado:
+  - Type: 15
     Audio: {fileID: 8300000, guid: 2b6b4eb7825fc4aabb7b17483095211a, type: 3}
     Volume: 1

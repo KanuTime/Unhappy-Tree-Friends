@@ -24,7 +24,7 @@ namespace _Scripts.Powers
             _selectedPowerModel.SelectedPower.Value =
                 _selectedPowerModel.SelectedPower.Value == _type ? PowerType.None : _type;
 
-            soundManager.UISelectTile();
+            soundManager.PlaySound(SoundType.UiSelectTile);
         }
     }
 }

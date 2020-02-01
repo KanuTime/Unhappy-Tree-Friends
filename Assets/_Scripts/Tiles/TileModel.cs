@@ -1,3 +1,4 @@
+using _Scripts.Effects;
 using _Scripts.Factions;
 using UniRx;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace _Scripts.Tiles
         Vector2Int Position { get; }
         IReactiveProperty<EnvironmentType> Type { get; }
         IReactiveProperty<int> Intensity(Faction faction);
+        ISubject<ConsequenceType> Consequence { get; }
     }
     
     public class TileModel : ITileModel
@@ -18,6 +20,7 @@ namespace _Scripts.Tiles
         private readonly IReactiveProperty<int> _humanity = new ReactiveProperty<int>();
         private readonly IReactiveProperty<int> _nature = new ReactiveProperty<int>();
         public IReactiveProperty<int> Intensity(Faction faction) => faction == Faction.Humans ? _humanity : _nature;
+        public ISubject<ConsequenceType> Consequence { get; } = new Subject<ConsequenceType>();
 
         public TileModel(Vector2Int position, EnvironmentType type, int humans, int nature)
         {

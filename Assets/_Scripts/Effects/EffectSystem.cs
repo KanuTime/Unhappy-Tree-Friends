@@ -32,6 +32,8 @@ namespace _Scripts.Effects
         {
             var (consequence, tile) = consequenceTuple;
             var tileEnvironment = tile.Type.Value;
+            
+            tile.Consequence.OnNext(consequence);
 
             var appliedEffects = effectData.Effects
                 .Where(data => data.ConsequenceType == consequence
