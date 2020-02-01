@@ -35,7 +35,10 @@ namespace _Scripts.Effects
         PowerBees,
         PowerEarthquake,
         PowerFlood,
-        PowerTornado
+        PowerTornado,
+        
+        HouseAppear,
+        HouseDisappear
     }
 
     public interface ISoundManager
