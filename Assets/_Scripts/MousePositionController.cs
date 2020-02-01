@@ -1,6 +1,7 @@
 using _Scripts.Tiles;
 using UniRx;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
 
 namespace _Scripts
@@ -33,7 +34,7 @@ namespace _Scripts
                 
                 _hovered.OnNext(tile.Model);
                 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
                     _clicked.OnNext(tile.Model);
             }
             else
