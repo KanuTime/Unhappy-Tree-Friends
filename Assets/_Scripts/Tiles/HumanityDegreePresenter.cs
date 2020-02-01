@@ -17,10 +17,10 @@ namespace _Scripts.Tiles
             _model.Humanity.Subscribe(DisplayHumans).AddTo(_disposer);
         }
 
-        private void DisplayHumans(HumanityDegree degree)
+        private void DisplayHumans(int degree)
         {
             for (var i = 0; i < _gameObjects.Count; i++)
-                _gameObjects[i].SetActive((int) degree > i);
+                _gameObjects[i].SetActive(degree > i);
         }
     }
 }

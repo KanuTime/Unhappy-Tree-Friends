@@ -24,8 +24,8 @@ namespace _Scripts.Factions
     public interface ISpreadData
     {
         IEnumerable<StartPoint> StartPoints { get; }
-        float HumanGrowthDuration(HumanityDegree degree);
-        float NatureGrowthDuration(NatureDegree degree);
+        float HumanGrowthDuration(int degree);
+        float NatureGrowthDuration(int degree);
     }
     
     [CreateAssetMenu(menuName = "Configs/Spread")]
@@ -35,10 +35,10 @@ namespace _Scripts.Factions
         public IEnumerable<StartPoint> StartPoints => _spawnPoints;
 
         [SerializeField] private List<GrowthSetup> _humanGrowth;
-        public float HumanGrowthDuration(HumanityDegree degree) => _humanGrowth.Single(entry => entry.Degree == (int) degree).TimeTilNextStage;
+        public float HumanGrowthDuration(int degree) => _humanGrowth.Single(entry => entry.Degree == degree).TimeTilNextStage;
 
         [SerializeField] private List<GrowthSetup> _natureGrowth;
-        public float NatureGrowthDuration(NatureDegree degree) => _natureGrowth.Single(entry => entry.Degree == (int) degree).TimeTilNextStage;
+        public float NatureGrowthDuration(int degree) => _natureGrowth.Single(entry => entry.Degree == degree).TimeTilNextStage;
         
         public override void InstallBindings()
         {

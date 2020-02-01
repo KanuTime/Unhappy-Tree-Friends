@@ -28,7 +28,7 @@ namespace _Scripts.Tiles
                 var humanityDegree = startPoints.Where(point => point.Faction == Faction.Humans).Sum(point => point.Intensity); 
                 var natureDegree = startPoints.Where(point => point.Faction == Faction.Nature).Sum(point => point.Intensity); 
                 
-                var tileModel = new TileModel(tile.Key, tile.Value, (HumanityDegree) humanityDegree, (NatureDegree) natureDegree);
+                var tileModel = new TileModel(tile.Key, tile.Value, humanityDegree, natureDegree);
                 _viewFactory.Create(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tileModel);
             }
         }

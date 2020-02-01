@@ -17,10 +17,10 @@ namespace _Scripts.Tiles
             _model.Nature.Subscribe(DisplayNature).AddTo(_disposer);
         }
 
-        private void DisplayNature(NatureDegree degree)
+        private void DisplayNature(int degree)
         {
             for (var i = 0; i < _gameObjects.Count; i++)
-                _gameObjects[i].SetActive((int) degree > i);
+                _gameObjects[i].SetActive(degree > i);
         }
     }
 }

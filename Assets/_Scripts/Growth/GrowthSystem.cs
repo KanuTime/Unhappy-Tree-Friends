@@ -18,9 +18,9 @@ namespace _Scripts.Growth
             _model.Nature.Subscribe(StartNatureGrowth).AddTo(_disposer);
         }
 
-        private void StartHumanGrowth(HumanityDegree degree)
+        private void StartHumanGrowth(int degree)
         {
-            if (degree == HumanityDegree._0)
+            if (degree == 0)
                 return;
 
             var timeTilNextStage = _data.HumanGrowthDuration(degree);
@@ -29,9 +29,9 @@ namespace _Scripts.Growth
                 .Subscribe(_ => _model.Humanity.Value++).AddTo(_disposer);
         }
         
-        private void StartNatureGrowth(NatureDegree degree)
+        private void StartNatureGrowth(int degree)
         {
-            if (degree == NatureDegree._0)
+            if (degree == 0)
                 return;
 
             var timeTilNextStage = _data.NatureGrowthDuration(degree);
