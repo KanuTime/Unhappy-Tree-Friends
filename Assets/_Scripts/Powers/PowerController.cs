@@ -17,9 +17,9 @@ namespace _Scripts.Powers
             mousePositionController.Clicked.Subscribe(OnTileClicked).AddTo(_disposer);
         }
 
-        private void OnTileClicked(TileView tileView)
+        private void OnTileClicked(TileEditView tileView)
         {
-            Debug.Log($"Tile {tileView.Position.x},{tileView.Position.y} clicked");
+            Debug.Log($"Tile of type {tileView.Type} clicked");
 
         }
     }
