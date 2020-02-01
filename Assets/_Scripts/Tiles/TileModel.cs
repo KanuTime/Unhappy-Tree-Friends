@@ -19,10 +19,12 @@ namespace _Scripts.Tiles
         public IReactiveProperty<HumanityDegree> Humanity { get; } = new ReactiveProperty<HumanityDegree>(HumanityDegree._0);
         public IReactiveProperty<NatureDegree> Nature { get; } = new ReactiveProperty<NatureDegree>(NatureDegree._0);
 
-        public TileModel(Vector2Int position, EnvironmentType type)
+        public TileModel(Vector2Int position, EnvironmentType type, HumanityDegree humans, NatureDegree nature)
         {
             Position = position;
             Type.Value = type;
+            Humanity.Value = humans;
+            Nature.Value = nature;
         }
     }
 }
