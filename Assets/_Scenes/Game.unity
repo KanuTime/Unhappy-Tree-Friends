@@ -384,10 +384,13 @@ MonoBehaviour:
   _humanIntensity: {fileID: 1361326421}
   _powerWindButton: {fileID: 2145700636}
   _powerWindImage: {fileID: 1290204034}
+  _powerWindCooldownImage: {fileID: 2145700637}
   _powerEarthButton: {fileID: 1076277591}
   _powerEarthImage: {fileID: 93034833}
+  _powerEarthCooldownImage: {fileID: 1076277592}
   _powerWaterButton: {fileID: 1028260799}
   _powerWaterImage: {fileID: 322158152}
+  _powerWaterCooldownImage: {fileID: 1028260800}
   _environmentChangeDelay: 1
 --- !u!114 &652265530
 MonoBehaviour:
@@ -666,6 +669,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1028260800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7042970259158586496, guid: 59b60ce3f78e00047bc1797e4390b529,
+    type: 3}
+  m_PrefabInstance: {fileID: 1028260797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1067945505
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +895,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1076277592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7042970259158586496, guid: 59b60ce3f78e00047bc1797e4390b529,
+    type: 3}
+  m_PrefabInstance: {fileID: 1076277589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1290204034 stripped
@@ -1580,5 +1607,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2145700637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7042970259158586496, guid: 59b60ce3f78e00047bc1797e4390b529,
+    type: 3}
+  m_PrefabInstance: {fileID: 2145700634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

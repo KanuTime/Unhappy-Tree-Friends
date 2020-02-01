@@ -1,5 +1,4 @@
 ﻿using _Scripts.Effects;
-using _Scripts.Tiles;
 using _Scripts.Utility;
 using UniRx;
 using UnityEngine.UI;
@@ -10,9 +9,12 @@ namespace _Scripts.Powers
     public class PowerController : Subscription
     {
         [Inject] private Button _button;
+        [Inject] private IPowerData _powerData;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private PowerType _type;
-        [Inject] private ISoundManager soundManager;
+        [Inject] private ISoundManager _soundManager;
+
+        private float _currentCooldown;
 
         public override void Initialize()
         {
@@ -24,7 +26,7 @@ namespace _Scripts.Powers
             _selectedPowerModel.SelectedPower.Value =
                 _selectedPowerModel.SelectedPower.Value == _type ? PowerType.None : _type;
 
-            soundManager.PlaySound(SoundType.UiSelectTile);
+            _soundManager.PlaySound(SoundType.UiSelectTile);
         }
     }
 }
