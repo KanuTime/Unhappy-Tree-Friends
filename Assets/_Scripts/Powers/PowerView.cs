@@ -14,6 +14,9 @@ namespace _Scripts.Powers
         [SerializeField] private Image _image;
         [SerializeField] private Button _button;
         [SerializeField] private Text _text;
+        [SerializeField] private Sprite _windPower;
+        [SerializeField] private Sprite _earthPower;
+        [SerializeField] private Sprite _waterPower;
 
         private Transform _oldParent;
         private Transform _transform;
@@ -28,8 +31,23 @@ namespace _Scripts.Powers
             _oldParent = _transform.parent;
             _transform.SetParent(_canvas.transform);
 
+            var sprite = _windPower;
+
+            switch (_powerType)
+            {
+                case PowerType.Wind:
+                    sprite = _windPower;
+                    break;
+                case PowerType.Earth:
+                    sprite = _earthPower;
+                    break;
+                case PowerType.Water:
+                    sprite = _waterPower;
+                    break;
+            }
+
             Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType);
-            Container.BindInterfacesTo<PowerPresenter>().AsSingle().WithArguments(_button, _powerType, _text);
+            Container.BindInterfacesTo<PowerPresenter>().AsSingle().WithArguments(_button, _powerType, _text, _image, sprite);
         }
 
         public override void ResetView()
