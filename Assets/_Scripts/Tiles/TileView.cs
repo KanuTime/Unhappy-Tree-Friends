@@ -11,7 +11,6 @@ namespace _Scripts.Tiles
     {
         [SerializeField] private GameObject _seaTile;
         [SerializeField] private GameObject _swampTile;
-        [SerializeField] private GameObject _desertTile;
 
         [SerializeField] private List<GameObject> _humans;
         [SerializeField] private List<GameObject> _nature;
@@ -25,7 +24,6 @@ namespace _Scripts.Tiles
             
             if (_seaTile != null) _seaTile.SetActive(_model.Type.Value == EnvironmentType.Sea);
             if (_swampTile != null) _swampTile.SetActive(_model.Type.Value == EnvironmentType.Swamp);
-            if (_desertTile != null) _desertTile.SetActive(_model.Type.Value == EnvironmentType.Desert);
             
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_humans, Faction.Humans);
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_nature, Faction.Nature);

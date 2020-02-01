@@ -23,6 +23,7 @@ namespace _Scripts.Tiles
         [Inject] private IViewFactory<TileView> _viewFactory;
         [Inject] private IViewFactory<MountainView> _mountainFactory;
         [Inject] private IViewFactory<GrasslandView> _grassFactory;
+        [Inject] private IViewFactory<DesertView> _desertFactory;
 
         private readonly Dictionary<Vector2Int, ITileModel> _tiles = new Dictionary<Vector2Int, ITileModel>();
         private int _maxX;
@@ -52,8 +53,10 @@ namespace _Scripts.Tiles
         {
             if (model.Type.Value == EnvironmentType.Mountain)
                 _mountainFactory.Create(position, model);
-            if (model.Type.Value == EnvironmentType.Grassland)
+            else if (model.Type.Value == EnvironmentType.Grassland)
                 _grassFactory.Create(position, model);
+            else if (model.Type.Value == EnvironmentType.Desert)
+                _desertFactory.Create(position, model);
             else 
                 _viewFactory.Create(position, model);
         }

@@ -65,7 +65,7 @@ MonoBehaviour:
     Position: {x: 10, y: 2}
     Intensity: 1
   - Faction: 1
-    Position: {x: 9, y: 3}
+    Position: {x: 9, y: 4}
     Intensity: 1
   - Faction: 1
     Position: {x: 9, y: 2}
@@ -103,66 +103,66 @@ MonoBehaviour:
   - Faction: 1
     Position: {x: 2, y: 3}
     Intensity: 1
-  _spreadMaximum: 100
+  _spreadMaximum: 700
   _humanGrowth:
   - Degree: 1
-    TimeTilNextStage: 5
-  - Degree: 2
     TimeTilNextStage: 10
-  - Degree: 3
-    TimeTilNextStage: 15
-  - Degree: 4
+  - Degree: 2
     TimeTilNextStage: 20
+  - Degree: 3
+    TimeTilNextStage: 23
+  - Degree: 4
+    TimeTilNextStage: 25
   _humanAllyInfluence:
   - AllyIntensity: 1
     SpreadFactor: 1
   - AllyIntensity: 2
-    SpreadFactor: 2
+    SpreadFactor: 1.7
   - AllyIntensity: 3
-    SpreadFactor: 3
+    SpreadFactor: 2.4
   - AllyIntensity: 4
-    SpreadFactor: 4
+    SpreadFactor: 3.2
   - AllyIntensity: 5
-    SpreadFactor: 5
+    SpreadFactor: 4
   _humanEnvironmentBase:
   - Environment: 0
-    SpreadBase: 10
+    SpreadBase: 7
   - Environment: 1
-    SpreadBase: 15
+    SpreadBase: 10
   - Environment: 2
-    SpreadBase: 5
+    SpreadBase: 3
   - Environment: 3
-    SpreadBase: 10
+    SpreadBase: 6
   - Environment: 4
-    SpreadBase: 10
+    SpreadBase: 7
   _natureGrowth:
   - Degree: 1
-    TimeTilNextStage: 7
+    TimeTilNextStage: 12
   - Degree: 2
-    TimeTilNextStage: 13
+    TimeTilNextStage: 30
   - Degree: 3
-    TimeTilNextStage: 20
+    TimeTilNextStage: 32
   - Degree: 4
-    TimeTilNextStage: 25
+    TimeTilNextStage: 35
   _natureAllyInfluence:
   - AllyIntensity: 1
-    SpreadFactor: 0.5
+    SpreadFactor: 0.7
   - AllyIntensity: 2
-    SpreadFactor: 1
+    SpreadFactor: 1.3
   - AllyIntensity: 3
-    SpreadFactor: 1.5
+    SpreadFactor: 1.9
   - AllyIntensity: 4
-    SpreadFactor: 2
+    SpreadFactor: 2.6
   - AllyIntensity: 5
-    SpreadFactor: 2.5
+    SpreadFactor: 3.3
   _natureEnvironmentBase:
   - Environment: 0
     SpreadBase: 10
   - Environment: 1
-    SpreadBase: 10
+    SpreadBase: 8
   - Environment: 2
-    SpreadBase: 15
+    SpreadBase: 13
   - Environment: 3
-    SpreadBase: 5
+    SpreadBase: 3
   - Environment: 4
-    SpreadBase: 10
+    SpreadBase: 4
