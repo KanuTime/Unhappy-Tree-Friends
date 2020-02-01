@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Scripts.Tiles
 {
-    public class TileView : MonoBehaviour
+    public class TileEditView : MonoBehaviour
     {
         [SerializeField] private EnvironmentType _type;
 
@@ -21,7 +21,7 @@ namespace _Scripts.Tiles
             _desertTile.SetActive(_type == EnvironmentType.Desert);
             _mountainTile.SetActive(_type == EnvironmentType.Mountain);
         }
-        
-        public Vector2Int Position { get; set; }
+
+        public EnvironmentType Type => _type;
     }
 }

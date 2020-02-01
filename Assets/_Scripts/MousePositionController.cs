@@ -7,8 +7,8 @@ namespace _Scripts
 {
     public interface IMousePositionController
     {
-        IObservable<TileView> Clicked { get; }
-        IObservable<TileView> Hovered { get; }
+        IObservable<TileEditView> Clicked { get; }
+        IObservable<TileEditView> Hovered { get; }
     }
     
     public class MousePositionController : ITickable, IMousePositionController
@@ -16,11 +16,11 @@ namespace _Scripts
         [Inject] private Camera _camera;
         [Inject] private LayerMask _tileLayer;
 
-        public IObservable<TileView> Clicked => _clicked;
-        private readonly Subject<TileView> _clicked = new Subject<TileView>();
+        public IObservable<TileEditView> Clicked => _clicked;
+        private readonly Subject<TileEditView> _clicked = new Subject<TileEditView>();
         
-        public IObservable<TileView> Hovered => _hovered;
-        private readonly Subject<TileView> _hovered = new Subject<TileView>();
+        public IObservable<TileEditView> Hovered => _hovered;
+        private readonly Subject<TileEditView> _hovered = new Subject<TileEditView>();
         
         public void Tick()
         {
@@ -30,7 +30,7 @@ namespace _Scripts
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, 100f, _tileLayer))
             {
-                var tile = hit.collider.gameObject.GetComponent<TileView>();
+                var tile = hit.collider.gameObject.GetComponent<TileEditView>();
                 _hovered.OnNext(tile);
                 
                 if (Input.GetMouseButtonDown(0))

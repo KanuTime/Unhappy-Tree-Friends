@@ -8,12 +8,12 @@ namespace _Scripts
     {
         [SerializeField] private Camera _camera;
         [SerializeField] private LayerMask _tileLayer;
-        [SerializeField] private GridView _grid;
+        [SerializeField] private GridEditView gridEdit;
         
         public override void InstallBindings()
         {
             Container.BindInstance(_camera);
-            Container.Bind<IGrid>().FromInstance(_grid);
+            Container.Bind<IGridEdit>().FromInstance(gridEdit);
             
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
