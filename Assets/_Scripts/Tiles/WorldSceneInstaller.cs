@@ -23,10 +23,13 @@ namespace _Scripts
         [Header("Buttons")]
         [SerializeField] private Button _powerWindButton;
         [SerializeField] private Image _powerWindImage;
+        [SerializeField] private Image _powerWindCooldownImage;
         [SerializeField] private Button _powerEarthButton;
         [SerializeField] private Image _powerEarthImage;
+        [SerializeField] private Image _powerEarthCooldownImage;
         [SerializeField] private Button _powerWaterButton;
         [SerializeField] private Image _powerWaterImage;
+        [SerializeField] private Image _powerWaterCooldownImage;
 
         [Header("Config")] 
         [SerializeField] private float _environmentChangeDelay;
@@ -51,9 +54,12 @@ namespace _Scripts
             Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerWindButton, PowerType.Wind);
             Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerEarthButton, PowerType.Earth);
             Container.BindInterfacesTo<PowerController>().AsCached().WithArguments(_powerWaterButton, PowerType.Water);
-            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerWindButton, PowerType.Wind, _powerWindImage);
-            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerEarthButton, PowerType.Earth, _powerEarthImage);
-            Container.BindInterfacesTo<PowerPresenter>().AsCached().WithArguments(_powerWaterButton, PowerType.Water, _powerWaterImage);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached()
+                .WithArguments(_powerWindButton, PowerType.Wind, _powerWindImage, _powerWindCooldownImage);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached()
+                .WithArguments(_powerEarthButton, PowerType.Earth, _powerEarthImage, _powerEarthCooldownImage);
+            Container.BindInterfacesTo<PowerPresenter>().AsCached()
+                .WithArguments(_powerWaterButton, PowerType.Water, _powerWaterImage, _powerWaterCooldownImage);
 
             Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
             Container.BindInterfacesTo<EffectSystem>().AsSingle();

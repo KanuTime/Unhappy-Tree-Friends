@@ -31,8 +31,6 @@ namespace _Scripts.Powers
 
         public void TriggerCooldown(PowerType powerType)
         {
-            SelectedPower.Value = PowerType.None;
-
             switch (powerType)
             {
                 case PowerType.Water:
