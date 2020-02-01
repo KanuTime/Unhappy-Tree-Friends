@@ -74,7 +74,7 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 7265800cef21645fc8e5f73b8b8443ca, type: 3}
     Volume: 1
   - Type: 23
-    Audio: {fileID: 8300000, guid: 5f12ec405e2c3486fabcd7fd52cb7e99, type: 3}
+    Audio: {fileID: 8300000, guid: 3dc6eb2de0259433e8d8fca3f3bfe0fc, type: 3}
     Volume: 1
   - Type: 13
     Audio: {fileID: 8300000, guid: c57ef423af70d43b09516445d1f17623, type: 3}
