@@ -121,3 +121,5 @@ MonoBehaviour:
     TimeTilNextStage: 20
   - Degree: 4
     TimeTilNextStage: 25
+  _humanSpread: []
+  _natureSpread: []

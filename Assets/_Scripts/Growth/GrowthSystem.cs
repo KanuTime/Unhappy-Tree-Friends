@@ -11,33 +11,22 @@ namespace _Scripts.Growth
     {
         [Inject] private ITileModel _model;
         [Inject] private ISpreadData _data;
+        [Inject] private Faction _faction;
         
         public override void Initialize()
         {
-            _model.Humanity.Subscribe(StartHumanGrowth).AddTo(_disposer);
-            _model.Nature.Subscribe(StartNatureGrowth).AddTo(_disposer);
+            _model.Intensity(_faction).Subscribe(StartGrowth).AddTo(_disposer);
         }
 
-        private void StartHumanGrowth(int degree)
+        private void StartGrowth(int degree)
         {
             if (degree == 0 || degree >= 5)
                 return;
 
-            var timeTilNextStage = _data.HumanGrowthDuration(degree);
+            var timeTilNextStage = _data.GrowthDuration(_faction, degree);
             Observable.Timer(TimeSpan.FromSeconds(timeTilNextStage))
-                .Where(_ => _model.Humanity.Value == degree).Take(1)
-                .Subscribe(_ => _model.Humanity.Value++).AddTo(_disposer);
-        }
-        
-        private void StartNatureGrowth(int degree)
-        {
-            if (degree == 0 || degree >= 5)
-                return;
-
-            var timeTilNextStage = _data.NatureGrowthDuration(degree);
-            Observable.Timer(TimeSpan.FromSeconds(timeTilNextStage))
-                .Where(_ => _model.Nature.Value == degree).Take(1)
-                .Subscribe(_ => _model.Nature.Value++).AddTo(_disposer);
+                .Where(_ => _model.Intensity(_faction).Value == degree).Take(1)
+                .Subscribe(_ => _model.Intensity(_faction).Value++).AddTo(_disposer);
         }
     }
 }

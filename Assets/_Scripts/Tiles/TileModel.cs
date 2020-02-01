@@ -8,6 +8,7 @@ namespace _Scripts.Tiles
     {
         Vector2Int Position { get; }
         IReactiveProperty<EnvironmentType> Type { get; }
+        IReactiveProperty<int> Intensity(Faction faction);
         IReactiveProperty<int> Humanity { get; }
         IReactiveProperty<int> Nature { get; }
     }
@@ -18,6 +19,7 @@ namespace _Scripts.Tiles
         public IReactiveProperty<EnvironmentType> Type { get; } = new ReactiveProperty<EnvironmentType>();
         public IReactiveProperty<int> Humanity { get; } = new ReactiveProperty<int>();
         public IReactiveProperty<int> Nature { get; } = new ReactiveProperty<int>();
+        public IReactiveProperty<int> Intensity(Faction faction) => faction == Faction.Humans ? Humanity : Nature;
 
         public TileModel(Vector2Int position, EnvironmentType type, int humans, int nature)
         {

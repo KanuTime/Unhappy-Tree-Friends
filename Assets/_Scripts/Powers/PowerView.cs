@@ -10,7 +10,7 @@ namespace _Scripts.Powers
     {
         [Inject] private Canvas _canvas;
         [Inject] private PowerType _powerType;
-
+        
         [SerializeField] private Image _image;
         [SerializeField] private Button _button;
         [SerializeField] private Text _text;
@@ -29,6 +29,7 @@ namespace _Scripts.Powers
             _transform.parent = _canvas.transform;
 
             Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType, _text);
+            Container.BindInterfacesTo<PowerPresenter>().AsSingle();
         }
 
         public override void ResetView()

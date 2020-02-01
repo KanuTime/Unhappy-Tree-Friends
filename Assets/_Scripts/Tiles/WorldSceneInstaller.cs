@@ -22,8 +22,11 @@ namespace _Scripts
             
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
-            
+
+            Container.BindInterfacesTo<SelectedPowerModel>().AsSingle();
             Container.BindInterfacesTo<PowerSelectionSystem>().AsSingle().WithArguments(_canvas);
+
+            Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
         }
     }
 }
