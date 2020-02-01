@@ -24,3 +24,4 @@ MonoBehaviour:
   _tornado: {fileID: 2919711720124113283, guid: 75fa880b9a32a7145bb7d54ead2d3cbe,
     type: 3}
   _flood: {fileID: 1025214248013305111, guid: 24bb4ca188cde484c81dcf1a7218f074, type: 3}
+  _fire: {fileID: 7112432804672737726, guid: bf0fbdfab2b9b8047aeb6e132803040e, type: 3}

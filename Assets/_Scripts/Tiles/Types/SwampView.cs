@@ -9,6 +9,7 @@ namespace _Scripts.Tiles.Types
             base.Install();
             
             Container.BindInterfacesTo<FloodSystem>().AsSingle();
+            Container.BindInterfacesTo<FireSystem>().AsSingle();
         }
     }
 }
