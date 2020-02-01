@@ -13,7 +13,7 @@ namespace _Scripts.Powers
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private IConsequenceData _consequenceData;
 
-        private Subject<(ConsequenceType, ITileModel)> _subject = new Subject<(ConsequenceType, ITileModel)>();
+        private readonly Subject<(ConsequenceType, ITileModel)> _subject = new Subject<(ConsequenceType, ITileModel)>();
         public IObservable<(ConsequenceType, ITileModel)> ConsequenceTileTrigger => _subject;
 
         public override void Initialize()
@@ -33,6 +33,8 @@ namespace _Scripts.Powers
 
             if (selectedPower == PowerType.None) Debug.Log("No Power Selected");
 
+            if (!_selectedPowerModel.IsAvailable(selectedPower)) return;
+
             foreach (var consequenceSetup in _consequenceData.Consequences)
             {
                 if (consequenceSetup._power == selectedPower && consequenceSetup._environment == clickedEnvironmentType)
@@ -41,6 +43,8 @@ namespace _Scripts.Powers
                     _subject.OnNext((consequenceSetup._consequence, tileModel));
                 }
             }
+
+            _selectedPowerModel.TriggerCooldown(selectedPower);
         }
     }
 }
