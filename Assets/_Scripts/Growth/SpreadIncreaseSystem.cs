@@ -18,7 +18,7 @@ namespace _Scripts.Growth
 
         private void Spawn(Faction faction)
         {
-            if (_model.Intensity(faction).Value == 0)
+            if (_model.Intensity(faction).Value == 0 && _model.Intensity(faction.Invert()).Value < 5)
                 _model.Intensity(faction).Value = 1;
         }
     }
