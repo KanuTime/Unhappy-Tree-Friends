@@ -31,11 +31,14 @@ namespace _Scripts.Effects
         DestroyNature,
         
         UiSelectTile,
-        
+        UISelectTileFail,
+    
+        PowerReady,
         PowerBees,
         PowerEarthquake,
         PowerFlood,
         PowerTornado,
+        PowerFire,
         
         HouseAppear,
         HouseDisappear,
