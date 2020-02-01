@@ -12,11 +12,17 @@ namespace _Scripts
         [SerializeField] private Canvas _canvas;
         [SerializeField] private LayerMask _tileLayer;
         [SerializeField] private GridEditView gridEdit;
+        [SerializeField] private float _cameraMovementSpeed;
+        [SerializeField] private LayerMask _panningLayer;
         
         public override void InstallBindings()
         {
             Container.BindInstance(_camera);
             Container.BindInstance(_canvas);
+            
+            Container.BindInterfacesTo<CameraKeyMovementSystem>().AsSingle().WithArguments(_cameraMovementSpeed);
+            Container.BindInterfacesTo<CameraDragMovementSystem>().AsSingle().WithArguments(_panningLayer, _cameraMovementSpeed * 3);
+            
             Container.Bind<IGridEdit>().FromInstance(gridEdit);
             
             Container.BindInterfacesTo<GridModel>().AsSingle();
