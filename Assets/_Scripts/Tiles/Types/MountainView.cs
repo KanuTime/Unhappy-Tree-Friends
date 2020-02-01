@@ -13,6 +13,7 @@ namespace _Scripts.Tiles.Types
             base.Install();
             
             Container.BindInterfacesTo<EarthquakeSystem>().AsSingle().WithArguments(_animator, _duration);
+            Container.BindInterfacesTo<FireSystem>().AsSingle();
         }
     }
 }
