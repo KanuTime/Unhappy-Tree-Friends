@@ -21,6 +21,7 @@ namespace _Scripts.Utility
 
         [Header("Effects")]
         [SerializeField] private TornadoView _tornado;
+        [SerializeField] private FloodView _flood;
         
         public override void InstallBindings()
         {
@@ -33,6 +34,7 @@ namespace _Scripts.Utility
             BindViewFactory(_sea);
             
             BindViewFactory(_tornado);
+            BindViewFactory(_flood);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component
