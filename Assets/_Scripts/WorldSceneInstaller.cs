@@ -1,3 +1,4 @@
+using _Scripts.Powers;
 using _Scripts.Tiles;
 using UnityEngine;
 using Zenject;
@@ -17,6 +18,8 @@ namespace _Scripts
             
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
+
+            Container.BindInterfacesTo<PowerController>().AsSingle();
         }
     }
 }
