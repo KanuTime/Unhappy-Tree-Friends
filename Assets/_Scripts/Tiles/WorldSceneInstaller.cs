@@ -14,6 +14,7 @@ namespace _Scripts
         [SerializeField] private GridEditView gridEdit;
         [SerializeField] private float _cameraMovementSpeed;
         [SerializeField] private LayerMask _panningLayer;
+        [SerializeField] private SoundEffects _soundEffects;
         
         public override void InstallBindings()
         {
@@ -24,6 +25,7 @@ namespace _Scripts
             Container.BindInterfacesTo<CameraDragMovementSystem>().AsSingle().WithArguments(_panningLayer, _cameraMovementSpeed * 3);
             
             Container.Bind<IGridEdit>().FromInstance(gridEdit);
+            Container.BindInterfacesTo<SoundEffects>().FromInstance(_soundEffects);
             
             Container.BindInterfacesTo<GridModel>().AsSingle();
             

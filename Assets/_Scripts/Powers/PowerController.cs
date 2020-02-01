@@ -1,4 +1,5 @@
-﻿using _Scripts.Tiles;
+﻿using _Scripts.Effects;
+using _Scripts.Tiles;
 using _Scripts.Utility;
 using UniRx;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace _Scripts.Powers
         [Inject] private IMousePositionController _positionController;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private PowerType _type;
+        [Inject] private ISoundManager soundManager;
 
         public override void Initialize()
         {
@@ -24,6 +26,7 @@ namespace _Scripts.Powers
         {
             Debug.Log($"Button with type {_type} clicked.");
             _selectedPowerModel.SelectedPower.Value = _type;
+            soundManager.UISelectTile();
         }
 
         private void OnMouseClick(ITileModel model)

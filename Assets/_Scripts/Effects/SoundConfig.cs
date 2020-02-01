@@ -1,6 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -15,6 +14,7 @@ namespace _Scripts.Effects
 
     public interface ISoundManager
     {
+        UniRx.IObservable<SoundEntry> SoundEntryToPlay { get; }
         void TileCreateCity();
         void TileCreateDesert();
         void TileCreateGrass();
@@ -28,10 +28,13 @@ namespace _Scripts.Effects
         void TileDestroyNature();
         void UISelectTile();
     }
-    
+
     [CreateAssetMenu(menuName = "Configs/Sound")]
     public class SoundConfig : ScriptableObjectInstaller, ISoundManager
     {
+        private Subject<SoundEntry> _soundEntryToPlay = new Subject<SoundEntry>();
+        public UniRx.IObservable<SoundEntry> SoundEntryToPlay => _soundEntryToPlay;
+
         [SerializeField] private SoundEntry _TileCreateCity;
         [SerializeField] private SoundEntry _TileCreateDesert;
         [SerializeField] private SoundEntry _TileCreateGrass;
@@ -57,10 +60,10 @@ namespace _Scripts.Effects
         public void TileDestroyHumans() => PlaySound(_TileDestroyHumans);
         public void TileDestroyNature() => PlaySound(_TileDestroyNature);
         public void UISelectTile() => PlaySound(_UISelectTile);
-        
+
         private void PlaySound(SoundEntry entry)
         {
-            // TODO
+            _soundEntryToPlay.OnNext(entry);
         }
 
 

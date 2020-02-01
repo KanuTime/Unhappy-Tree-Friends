@@ -1,17 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Scripts.Utility;
+using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.Effects
 {
-    public class SoundEffects : View
+    public class SoundEffects : MonoBehaviour, IInitializable
     {
-        private List<AudioSource> _audioSources;
+        [Inject] private ISoundManager _soundManager;
 
-        protected override void Install()
+        private readonly List<AudioSource> _audioSources = new List<AudioSource>();
+        
+        public void Initialize()
         {
-            
+            _soundManager.SoundEntryToPlay
+                .Subscribe(Play)
+                .AddTo(this);
+        }
+
+        private void Play(SoundEntry soundEntry)
+        {
+            var audioSource = GetAvailableAudioSource();
+            audioSource.PlayOneShot(soundEntry.Audio);
         }
         
         private AudioSource GetAvailableAudioSource()
@@ -20,10 +32,8 @@ namespace _Scripts.Effects
             {
                 return _audioSources.First(source => !source.isPlaying);
             }
-            else
-            {
-                return ExpandSources();
-            }	
+
+            return ExpandSources();
         }
 
         private AudioSource ExpandSources()
@@ -33,7 +43,6 @@ namespace _Scripts.Effects
 
             return source;
         }
-
     }
 
 }
