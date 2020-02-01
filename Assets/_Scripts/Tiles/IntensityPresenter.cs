@@ -7,17 +7,18 @@ using Zenject;
 
 namespace _Scripts.Tiles
 {
-    public class HumanityDegreePresenter : Subscription
+    public class IntensityPresenter : Subscription
     {
         [Inject] private List<GameObject> _gameObjects;
         [Inject] private ITileModel _model;
+        [Inject] private Faction _faction;
         
         public override void Initialize()
         {
-            _model.Humanity.Subscribe(DisplayHumans).AddTo(_disposer);
+            _model.Intensity(_faction).Subscribe(DisplayIntensity).AddTo(_disposer);
         }
 
-        private void DisplayHumans(int degree)
+        private void DisplayIntensity(int degree)
         {
             for (var i = 0; i < _gameObjects.Count; i++)
                 _gameObjects[i].SetActive(degree > i);
