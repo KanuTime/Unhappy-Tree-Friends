@@ -25,6 +25,9 @@ namespace _Scripts.Powers
 
         private void ApplyConsequence(ITileModel tileModel)
         {
+            if (tileModel == null)
+                return;
+
             var selectedPower = _selectedPowerModel.SelectedPower.Value;
             var clickedEnvironmentType = tileModel.Type.Value;
 

@@ -19,6 +19,15 @@ namespace _Scripts.Powers
         {
             _text.text = _powerType.ToString();
             _image.sprite = _sprite;
+
+            _selectedPowerModel.SelectedPower
+                .Subscribe(SelectedChanged)
+                .AddTo(_disposer);
+        }
+
+        private void SelectedChanged(PowerType powerType)
+        {
+            _image.color = _powerType == powerType ? Color.green : Color.white;
         }
     }
 }
