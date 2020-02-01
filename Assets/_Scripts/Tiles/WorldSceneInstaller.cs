@@ -37,6 +37,7 @@ namespace _Scripts
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
             
             Container.BindInterfacesTo<KillingEffectSystem>().AsSingle();
+            
         }
     }
 }
