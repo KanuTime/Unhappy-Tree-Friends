@@ -1,3 +1,4 @@
+using System.Linq;
 using _Scripts.Factions;
 using _Scripts.Tiles;
 using UnityEngine;
@@ -20,12 +21,11 @@ namespace _Scripts.Growth
             if (_spreadIntensity >= _data.SpreadMaximum)
                 return;
             
-            foreach (var adjacent in _grid.AdjacentTiles(_model.Position))
-            {
-                var baseValue = _data.EnvironmentSpreadBase(_faction, adjacent.Type.Value);
-                var factor = _data.AllySpreadInfluence(_faction, adjacent.Intensity(_faction).Value);
-                _spreadIntensity += baseValue * factor * Time.deltaTime;
-            }
+            var baseValue = _data.EnvironmentSpreadBase(_faction, _model.Type.Value);
+            var factor = _grid.AdjacentTiles(_model.Position)
+                .Sum(adjacent => _data.AllySpreadInfluence(_faction, adjacent.Intensity(_faction).Value));
+
+            _spreadIntensity += baseValue * factor * Time.deltaTime;
             
             if (_spreadIntensity >= _data.SpreadMaximum)
                 _spread.Triggered.OnNext(_faction);
