@@ -14,11 +14,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoints:
   - Faction: 0
-    Position: {x: 2, y: 3}
+    Position: {x: 0, y: 1}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 1, y: 1}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 2}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 1, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 3, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 0, y: 2}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 6, y: 6}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 7}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 6, y: 7}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 0}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 10, y: 3}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 3, y: 11}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 0, y: 11}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 10, y: 6}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 10, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 10, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 3}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 3}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 5}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 8, y: 6}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 8, y: 5}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 9}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 9}
     Intensity: 1
   - Faction: 1
     Position: {x: 3, y: 3}
     Intensity: 1
+  - Faction: 1
+    Position: {x: 2, y: 3}
+    Intensity: 1
+  _spreadMaximum: 0
   _humanGrowth:
   - Degree: 1
     TimeTilNextStage: 5
@@ -28,6 +113,28 @@ MonoBehaviour:
     TimeTilNextStage: 15
   - Degree: 4
     TimeTilNextStage: 20
+  _humanAllyInfluence:
+  - AllyIntensity: 1
+    SpreadFactor: 0.1
+  - AllyIntensity: 2
+    SpreadFactor: 0.3
+  - AllyIntensity: 3
+    SpreadFactor: 0.5
+  - AllyIntensity: 4
+    SpreadFactor: 0.7
+  - AllyIntensity: 5
+    SpreadFactor: 1
+  _humanEnvironmentBase:
+  - Environment: 0
+    SpreadBase: 10
+  - Environment: 1
+    SpreadBase: 15
+  - Environment: 2
+    SpreadBase: 5
+  - Environment: 3
+    SpreadBase: 10
+  - Environment: 4
+    SpreadBase: 10
   _natureGrowth:
   - Degree: 1
     TimeTilNextStage: 7
@@ -37,3 +144,25 @@ MonoBehaviour:
     TimeTilNextStage: 20
   - Degree: 4
     TimeTilNextStage: 25
+  _natureAllyInfluence:
+  - AllyIntensity: 1
+    SpreadFactor: 0.1
+  - AllyIntensity: 2
+    SpreadFactor: 0.2
+  - AllyIntensity: 3
+    SpreadFactor: 0.3
+  - AllyIntensity: 4
+    SpreadFactor: 0.4
+  - AllyIntensity: 5
+    SpreadFactor: 0.6
+  _natureEnvironmentBase:
+  - Environment: 0
+    SpreadBase: 10
+  - Environment: 1
+    SpreadBase: 10
+  - Environment: 2
+    SpreadBase: 15
+  - Environment: 3
+    SpreadBase: 5
+  - Environment: 4
+    SpreadBase: 10

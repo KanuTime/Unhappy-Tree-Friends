@@ -5,9 +5,9 @@ namespace _Scripts.Effects
         None,
         Earthquake,
         Fire,
-	PollenExplosion,
-	Hurricane,
-	AnimalSwarm,
-	Flood,
+		PollenExplosion,
+		Hurricane,
+		AnimalSwarm,
+		Flood,
     }
 }
