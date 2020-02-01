@@ -4,6 +4,7 @@ using System.Linq;
 using _Scripts.Factions;
 using _Scripts.Tiles.Types;
 using _Scripts.Utility;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -14,7 +15,7 @@ namespace _Scripts.Tiles
         IEnumerable<ITileModel> AdjacentTiles(Vector2Int position);
     }
     
-    public class GridModel : IGridModel, IInitializable
+    public class GridModel : Subscription, IGridModel
     {
         private const int K_offset = 5;
         
@@ -31,7 +32,7 @@ namespace _Scripts.Tiles
         private int _maxX;
         private int _maxY;
         
-        public void Initialize()
+        public override void Initialize()
         {
             var tiles = _gridEdit.Tiles;
             foreach (var tile in tiles)
@@ -42,7 +43,9 @@ namespace _Scripts.Tiles
                 
                 var tileModel = new TileModel(tile.Key, tile.Value, humanityDegree, natureDegree);
                 _tiles[tile.Key] = tileModel;
-                CreateView(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tileModel);
+
+                var position = new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset);
+                tileModel.Type.Subscribe(type => CreateView(position, tileModel, type)).AddTo(_disposer);
 
                 if (tile.Key.x > _maxX)
                     _maxX = tile.Key.x;
@@ -51,9 +54,9 @@ namespace _Scripts.Tiles
             }
         }
 
-        private void CreateView(Vector3 position, ITileModel model)
+        private void CreateView(Vector3 position, ITileModel model, EnvironmentType type)
         {
-            switch (model.Type.Value)
+            switch (type)
             {
                 case EnvironmentType.Sea:
                     _seaFactory.Create(position, model);
