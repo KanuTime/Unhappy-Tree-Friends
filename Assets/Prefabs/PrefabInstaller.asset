@@ -15,3 +15,5 @@ MonoBehaviour:
   _tile: {fileID: -9021242286489167943, guid: 2ea05f99f830efc4dbd4061c1b3a95aa, type: 3}
   _powerView: {fileID: 6157231322850707309, guid: 59b60ce3f78e00047bc1797e4390b529,
     type: 3}
+  _mountain: {fileID: -5544489205604745092, guid: 34daeb94cd7e0234da883388584dd885,
+    type: 3}

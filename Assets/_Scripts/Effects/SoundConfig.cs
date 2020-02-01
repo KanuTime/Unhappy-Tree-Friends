@@ -7,7 +7,7 @@ namespace _Scripts.Effects
     [Serializable]
     public class SoundEntry
     {
-        public AudioSource Audio;
+        public AudioClip Audio;
         public float Volume = 1;
     }
 
@@ -28,8 +28,7 @@ namespace _Scripts.Effects
         
         private void PlaySound(SoundEntry entry)
         {
-            entry.Audio.volume = entry.Volume;
-            entry.Audio.Play();
+            // TODO
         }
 
         public override void InstallBindings()

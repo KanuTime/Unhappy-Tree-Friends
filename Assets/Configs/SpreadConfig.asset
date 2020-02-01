@@ -103,7 +103,7 @@ MonoBehaviour:
   - Faction: 1
     Position: {x: 2, y: 3}
     Intensity: 1
-  _spreadMaximum: 0
+  _spreadMaximum: 100
   _humanGrowth:
   - Degree: 1
     TimeTilNextStage: 5
@@ -115,15 +115,15 @@ MonoBehaviour:
     TimeTilNextStage: 20
   _humanAllyInfluence:
   - AllyIntensity: 1
-    SpreadFactor: 0.1
-  - AllyIntensity: 2
-    SpreadFactor: 0.3
-  - AllyIntensity: 3
-    SpreadFactor: 0.5
-  - AllyIntensity: 4
-    SpreadFactor: 0.7
-  - AllyIntensity: 5
     SpreadFactor: 1
+  - AllyIntensity: 2
+    SpreadFactor: 2
+  - AllyIntensity: 3
+    SpreadFactor: 3
+  - AllyIntensity: 4
+    SpreadFactor: 4
+  - AllyIntensity: 5
+    SpreadFactor: 5
   _humanEnvironmentBase:
   - Environment: 0
     SpreadBase: 10
@@ -146,15 +146,15 @@ MonoBehaviour:
     TimeTilNextStage: 25
   _natureAllyInfluence:
   - AllyIntensity: 1
-    SpreadFactor: 0.1
+    SpreadFactor: 0.5
   - AllyIntensity: 2
-    SpreadFactor: 0.2
+    SpreadFactor: 1
   - AllyIntensity: 3
-    SpreadFactor: 0.3
+    SpreadFactor: 1.5
   - AllyIntensity: 4
-    SpreadFactor: 0.4
+    SpreadFactor: 2
   - AllyIntensity: 5
-    SpreadFactor: 0.6
+    SpreadFactor: 2.5
   _natureEnvironmentBase:
   - Environment: 0
     SpreadBase: 10
