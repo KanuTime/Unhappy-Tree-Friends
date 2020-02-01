@@ -15,8 +15,12 @@ namespace _Scripts.Powers
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private IPowerData _powerData;
 
+        private Color _originalColor;
+
         public override void Initialize()
         {
+            _originalColor = _buttonImage.color;
+
             _selectedPowerModel.SelectedPower
                 .Subscribe(SelectedChanged)
                 .AddTo(_disposer);
@@ -24,7 +28,7 @@ namespace _Scripts.Powers
 
         private void SelectedChanged(PowerType powerType)
         {
-            _buttonImage.color = _powerType == powerType ? Color.green : Color.white;
+            _buttonImage.color = _powerType == powerType ? Color.white : _originalColor;
         }
 
         public void Tick()
