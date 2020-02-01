@@ -28,6 +28,9 @@ namespace _Scripts
             if (Physics.Raycast(ray, out var hit, 100f, _tileLayer))
             {
                 var tile = hit.collider.gameObject.GetComponent<TileView>();
+                if (tile == null)
+                    return;
+                
                 _hovered.OnNext(tile.Model);
                 
                 if (Input.GetMouseButtonDown(0))
