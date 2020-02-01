@@ -1,27 +1,19 @@
 using _Scripts.Factions;
 using _Scripts.Tiles;
-using UniRx;
 using UnityEngine;
 using Zenject;
 
 namespace _Scripts.Growth
 {
-    public interface ISpreadSystem
+    public class SpreadSystem : ITickable
     {
-        IObservable<Faction> SpreadingStarted { get; }
-    }
-    
-    public class SpreadSystem : ITickable, ISpreadSystem
-    {
+        [Inject] private ISpread _spread;
         [Inject] private Faction _faction;
         [Inject] private ISpreadData _data;
         [Inject] private IGridModel _grid;
         [Inject] private ITileModel _model;
         
         private float _spreadIntensity;
-        
-        private readonly Subject<Faction> _spreadingStarted = new Subject<Faction>();
-        public IObservable<Faction> SpreadingStarted => _spreadingStarted;
         
         public void Tick()
         {
@@ -36,7 +28,7 @@ namespace _Scripts.Growth
             }
             
             if (_spreadIntensity >= _data.SpreadMaximum)
-                _spreadingStarted.OnNext(_faction);
+                _spread.Triggered.OnNext(_faction);
         }
     }
 }
