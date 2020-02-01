@@ -1,3 +1,4 @@
+using _Scripts.Factions;
 using UniRx;
 using UnityEngine;
 
@@ -6,20 +7,24 @@ namespace _Scripts.Tiles
     public interface ITileModel
     {
         Vector2Int Position { get; }
-        IReadOnlyReactiveProperty<EnvironmentType> Type { get; }
+        IReactiveProperty<EnvironmentType> Type { get; }
+        IReactiveProperty<HumanityDegree> Humanity { get; }
+        IReactiveProperty<NatureDegree> Nature { get; }
     }
     
     public class TileModel : ITileModel
     {
         public Vector2Int Position { get; }
+        public IReactiveProperty<EnvironmentType> Type { get; } = new ReactiveProperty<EnvironmentType>();
+        public IReactiveProperty<HumanityDegree> Humanity { get; } = new ReactiveProperty<HumanityDegree>(HumanityDegree._0);
+        public IReactiveProperty<NatureDegree> Nature { get; } = new ReactiveProperty<NatureDegree>(NatureDegree._0);
 
-        private readonly IReactiveProperty<EnvironmentType> _type = new ReactiveProperty<EnvironmentType>();
-        public IReadOnlyReactiveProperty<EnvironmentType> Type => _type;
-
-        public TileModel(Vector2Int position, EnvironmentType type)
+        public TileModel(Vector2Int position, EnvironmentType type, HumanityDegree humans, NatureDegree nature)
         {
             Position = position;
-            _type.Value = type;
+            Type.Value = type;
+            Humanity.Value = humans;
+            Nature.Value = nature;
         }
     }
 }

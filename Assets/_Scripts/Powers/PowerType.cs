@@ -3,7 +3,7 @@
     public enum PowerType
     {
         Wind,
-        Tectonic,
-        Rain
+        Earth,
+        Water
     }
 }
