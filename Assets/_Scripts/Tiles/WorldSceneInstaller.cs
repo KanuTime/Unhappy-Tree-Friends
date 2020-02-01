@@ -1,3 +1,4 @@
+using _Scripts.Effects;
 using _Scripts.Powers;
 using _Scripts.Tiles;
 using UnityEngine;
@@ -27,6 +28,7 @@ namespace _Scripts
             Container.BindInterfacesTo<PowerSelectionSystem>().AsSingle().WithArguments(_canvas);
 
             Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
+            Container.BindInterfacesTo<EffectController>().AsSingle();
         }
     }
 }
