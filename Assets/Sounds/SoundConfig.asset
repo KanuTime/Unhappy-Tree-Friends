@@ -51,31 +51,31 @@ MonoBehaviour:
     Volume: 0.3
   - Type: 12
     Audio: {fileID: 8300000, guid: 7acf73a886cbe4f809395a40b941fb05, type: 3}
-    Volume: 1
-  - Type: 13
+    Volume: 0.3
+  - Type: 14
     Audio: {fileID: 8300000, guid: c7720d0de064b453399104fb1422e800, type: 3}
     Volume: 1
-  - Type: 14
+  - Type: 15
     Audio: {fileID: 8300000, guid: 3751c5aeba31749ce98229258130e151, type: 3}
     Volume: 0.8
-  - Type: 15
+  - Type: 16
     Audio: {fileID: 8300000, guid: 1ad87fd8053a440ef9e6f71e6c113170, type: 3}
     Volume: 1
-  - Type: 16
+  - Type: 17
     Audio: {fileID: 8300000, guid: 2b6b4eb7825fc4aabb7b17483095211a, type: 3}
     Volume: 1
-  - Type: 17
+  - Type: 18
     Audio: {fileID: 8300000, guid: 4486f67200a4d41afbf2d1b56704dd83, type: 3}
     Volume: 1
-  - Type: 20
+  - Type: 21
     Audio: {fileID: 8300000, guid: 3dcf9903de85e4ef689b77bebcf3efb1, type: 3}
     Volume: 1
-  - Type: 21
+  - Type: 22
     Audio: {fileID: 8300000, guid: 7265800cef21645fc8e5f73b8b8443ca, type: 3}
     Volume: 1
-  - Type: 22
+  - Type: 23
     Audio: {fileID: 8300000, guid: 5f12ec405e2c3486fabcd7fd52cb7e99, type: 3}
     Volume: 1
   - Type: 13
     Audio: {fileID: 8300000, guid: c57ef423af70d43b09516445d1f17623, type: 3}
-    Volume: 1
+    Volume: 0.3
