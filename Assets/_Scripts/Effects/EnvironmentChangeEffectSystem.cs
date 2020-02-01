@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Tiles;
 using _Scripts.Utility;
 using UniRx;
@@ -7,6 +8,7 @@ namespace _Scripts.Effects
 {
     public class EnvironmentChangeEffectSystem : Subscription
     {
+        [Inject] private float _delay;
         [Inject] private IEffectSystem _effectSystem;
         
         public override void Initialize()
@@ -16,7 +18,8 @@ namespace _Scripts.Effects
 
         private void ChangeEnvironment((ITileModel tile, EnvironmentType environment) tuple)
         {
-            tuple.tile.Type.Value = tuple.environment;
+            Observable.Timer(TimeSpan.FromSeconds(_delay))
+                .Subscribe(_ => tuple.tile.Type.Value = tuple.environment).AddTo(_disposer);
         }
     }
 }
