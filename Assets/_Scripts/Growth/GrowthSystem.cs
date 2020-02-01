@@ -26,7 +26,24 @@ namespace _Scripts.Growth
             var timeTilNextStage = _data.GrowthDuration(_faction, degree);
             Observable.Timer(TimeSpan.FromSeconds(timeTilNextStage))
                 .Where(_ => _model.Intensity(_faction).Value == degree).Take(1)
-                .Subscribe(_ => _model.Intensity(_faction).Value++).AddTo(_disposer);
+                .Subscribe(IncreaseIntensity).AddTo(_disposer);
+        }
+
+        private void IncreaseIntensity()
+        {
+            var allyIntensity = _model.Intensity(_faction).Value;
+            var enemyIntensity = _model.Intensity(_faction.Invert()).Value;
+            if (allyIntensity + enemyIntensity < 5)
+            {
+                _model.Intensity(_faction).Value++;
+                return;
+            }
+
+            if (_faction == Faction.Humans)
+            {
+                _model.Intensity(_faction).Value++;
+                _model.Intensity(Faction.Nature).Value--;
+            }
         }
     }
 }

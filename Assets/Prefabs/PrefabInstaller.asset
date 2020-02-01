@@ -17,3 +17,5 @@ MonoBehaviour:
     type: 3}
   _mountain: {fileID: -5544489205604745092, guid: 34daeb94cd7e0234da883388584dd885,
     type: 3}
+  _grassland: {fileID: -7263110765252413797, guid: d015ff7c4b13b9640b3fd99eae297207,
+    type: 3}
