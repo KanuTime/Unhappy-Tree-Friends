@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1523478150101565027}
   - component: {fileID: 6354691047314189548}
   - component: {fileID: 8236099901690008949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8256129998739634272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1670768106641452928}
   - component: {fileID: 941293784308602242}
   - component: {fileID: 4876360776270688720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8718707392830591308}
   - component: {fileID: 7115286264090834291}
   - component: {fileID: 2753860962094169935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 572883790010232178}
   - component: {fileID: 2695501297487223843}
   - component: {fileID: 967246486425845100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 5822745583607614193}
   - component: {fileID: 9195088220170860245}
   - component: {fileID: 7287279664229138409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2816353619226640207}
   - component: {fileID: 7960051062196248638}
-  m_Layer: 0
+  - component: {fileID: 754568992563904945}
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,6 +550,19 @@ MonoBehaviour:
   _swampTile: {fileID: 2836222335332152321}
   _desertTile: {fileID: 5955937710206019554}
   _mountainTile: {fileID: 668955229183055399}
+--- !u!65 &754568992563904945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111743412723419445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5955937710206019554
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +575,7 @@ GameObject:
   - component: {fileID: 928936689595042166}
   - component: {fileID: 2336955723716390258}
   - component: {fileID: 8813740968713698547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +667,7 @@ GameObject:
   - component: {fileID: 6943959742851674139}
   - component: {fileID: 2269374782902028863}
   - component: {fileID: 7709187444730623438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grassland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +759,7 @@ GameObject:
   - component: {fileID: 2455379860661488598}
   - component: {fileID: 9119234275476519985}
   - component: {fileID: 5036341499957567608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +851,7 @@ GameObject:
   - component: {fileID: 156006875317107685}
   - component: {fileID: 3669631064303037256}
   - component: {fileID: 9153558419707895988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
