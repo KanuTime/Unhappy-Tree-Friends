@@ -7,11 +7,14 @@ using Zenject;
 
 namespace _Scripts.Powers
 {
-    public class PowerConsequenceController : Subscription
-    {
+    public class PowerConsequenceController : Subscription, IPowerConsequenceController
+	{
         [Inject] private IMousePositionController _mousePositionController;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private IConsequenceData _consequenceData;
+
+        private Subject<(ConsequenceType, ITileModel)> _subject = new Subject<(ConsequenceType, ITileModel)>();
+        public IObservable<(ConsequenceType, ITileModel)> ConsequenceTileTrigger => _subject;
 
         public override void Initialize()
         {
@@ -30,10 +33,9 @@ namespace _Scripts.Powers
                 if (consequenceSetup._power == selectedPower && consequenceSetup._environment == clickedEnvironmentType)
                 {
                     Debug.Log($"Applying consequence: {consequenceSetup._consequence}");
+                    _subject.OnNext((consequenceSetup._consequence, tileModel));
                 }
             }
-
-            
         }
     }
 }
