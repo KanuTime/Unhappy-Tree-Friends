@@ -4974,6 +4974,8 @@ MonoBehaviour:
   - {fileID: 3613208094204527691}
   _animator: {fileID: 2991576477202670799}
   _duration: 1
+  _particle: {fileID: 9087403622499654812}
+  _timeBetweenDuneWinds: {x: 2, y: 20}
 --- !u!65 &4976579197812062537
 BoxCollider:
   m_ObjectHideFlags: 0
