@@ -1,7 +1,9 @@
+using _Scripts.Balance;
 using _Scripts.Effects;
 using _Scripts.Powers;
 using _Scripts.Tiles;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace _Scripts
@@ -15,6 +17,8 @@ namespace _Scripts
         [SerializeField] private float _cameraMovementSpeed;
         [SerializeField] private LayerMask _panningLayer;
         [SerializeField] private SoundEffects _soundEffects;
+        [SerializeField] private Slider _natureIntensity;
+        [SerializeField] private Slider _humanIntensity;
         
         public override void InstallBindings()
         {
@@ -40,6 +44,9 @@ namespace _Scripts
             
             Container.BindInterfacesTo<KillingEffectSystem>().AsSingle();
             Container.BindInterfacesTo<EnvironmentChangeEffectSystem>().AsSingle();
+            
+            Container.BindInterfacesTo<BalanceModel>().AsSingle();
+            Container.BindInterfacesTo<BalancePresenter>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
         }
     }
 }
