@@ -33,6 +33,7 @@ namespace _Scripts.Tiles
             Container.BindInterfacesTo<SpreadIncreaseSystem>().AsSingle();
             
             Container.BindInterfacesTo<DestroyOnEnvironmentChangeSystem>().AsSingle();
+            Container.BindInterfacesTo<TileSoundSystem>().AsSingle();
         }
     }
 }
