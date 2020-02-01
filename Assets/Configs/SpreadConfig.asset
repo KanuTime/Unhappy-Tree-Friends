@@ -14,10 +14,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoints:
   - Faction: 0
-    Position: {x: 2, y: 3}
+    Position: {x: 0, y: 1}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 1, y: 1}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 2}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 1, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 3, y: 8}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 0, y: 2}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 6, y: 6}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 7}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 6, y: 7}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 2, y: 0}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 10, y: 3}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 3, y: 11}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 0, y: 11}
+    Intensity: 1
+  - Faction: 0
+    Position: {x: 10, y: 6}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 10, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 10, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 3}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 9, y: 3}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 2}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 5}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 4}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 8, y: 6}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 8, y: 5}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 5, y: 9}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 6, y: 9}
     Intensity: 1
   - Faction: 1
     Position: {x: 3, y: 3}
+    Intensity: 1
+  - Faction: 1
+    Position: {x: 2, y: 3}
     Intensity: 1
   _humanGrowth:
   - Degree: 1
