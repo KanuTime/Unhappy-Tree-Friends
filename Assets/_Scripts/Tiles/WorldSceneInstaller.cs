@@ -16,6 +16,8 @@ namespace _Scripts
             Container.BindInstance(_camera);
             Container.Bind<IGridEdit>().FromInstance(gridEdit);
             
+            Container.BindInterfacesTo<GridModel>().AsSingle();
+            
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
 
