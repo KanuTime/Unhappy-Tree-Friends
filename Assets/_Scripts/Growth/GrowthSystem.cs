@@ -20,7 +20,7 @@ namespace _Scripts.Growth
 
         private void StartHumanGrowth(int degree)
         {
-            if (degree == 0)
+            if (degree == 0 || degree >= 5)
                 return;
 
             var timeTilNextStage = _data.HumanGrowthDuration(degree);
@@ -31,7 +31,7 @@ namespace _Scripts.Growth
         
         private void StartNatureGrowth(int degree)
         {
-            if (degree == 0)
+            if (degree == 0 || degree >= 5)
                 return;
 
             var timeTilNextStage = _data.NatureGrowthDuration(degree);
