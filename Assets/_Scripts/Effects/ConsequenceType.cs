@@ -3,7 +3,11 @@ namespace _Scripts.Effects
     public enum ConsequenceType
     {
         None,
-        Flood,
-        
+        Earthquake,
+        Fire,
+	PollenExplosion,
+	Hurricane,
+	AnimalSwarm,
+	Flood,
     }
 }
