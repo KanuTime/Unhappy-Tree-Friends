@@ -2,8 +2,9 @@
 {
     public enum PowerType
     {
-        Wind,
-        Earth,
-        Water
+        None = -1,
+        Wind = 0,
+        Earth = 1,
+        Water = 2
     }
 }

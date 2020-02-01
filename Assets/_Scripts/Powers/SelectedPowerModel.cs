@@ -10,7 +10,7 @@ namespace _Scripts.Powers
 
     public class SelectedPowerModel: ISelectedPowerModel
     {
-        public IReactiveProperty<PowerType> SelectedPower { get; } = new ReactiveProperty<PowerType>();
+        public IReactiveProperty<PowerType> SelectedPower { get; } = new ReactiveProperty<PowerType>(PowerType.None);
 
         public SelectedPowerModel()
         {
