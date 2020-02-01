@@ -13,12 +13,14 @@ namespace _Scripts.Utility
         [SerializeField] private TileView _tile;
         [FormerlySerializedAs("_powerSelectionView")] [SerializeField] private PowerView _powerView;
         [SerializeField] private MountainView _mountain;
+        [SerializeField] private GrasslandView _grassland;
         
         public override void InstallBindings()
         {
             BindViewFactory(_tile);
             BindViewFactory(_powerView);
             BindViewFactory(_mountain);
+            BindViewFactory(_grassland);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component
