@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 3300298202308233149, guid: 458444057300388408f1211c32b105ee,
         type: 3}
       propertyPath: m_Name
-      value: Smoke
+      value: Smoke Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7893199875456178584, guid: 458444057300388408f1211c32b105ee,
         type: 3}
@@ -111,6 +111,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893199875456178584, guid: 458444057300388408f1211c32b105ee,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893199875456178584, guid: 458444057300388408f1211c32b105ee,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893199875456178584, guid: 458444057300388408f1211c32b105ee,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458444057300388408f1211c32b105ee, type: 3}
