@@ -15,7 +15,25 @@ MonoBehaviour:
   _spawnPoints:
   - Faction: 0
     Position: {x: 2, y: 3}
-    Intensity: 2
+    Intensity: 1
   - Faction: 1
-    Position: {x: 2, y: 3}
-    Intensity: 3
+    Position: {x: 3, y: 3}
+    Intensity: 1
+  _humanGrowth:
+  - Degree: 1
+    TimeTilNextStage: 5
+  - Degree: 2
+    TimeTilNextStage: 10
+  - Degree: 3
+    TimeTilNextStage: 15
+  - Degree: 4
+    TimeTilNextStage: 20
+  _natureGrowth:
+  - Degree: 1
+    TimeTilNextStage: 7
+  - Degree: 2
+    TimeTilNextStage: 13
+  - Degree: 3
+    TimeTilNextStage: 20
+  - Degree: 4
+    TimeTilNextStage: 25
