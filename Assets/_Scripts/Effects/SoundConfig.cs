@@ -38,7 +38,11 @@ namespace _Scripts.Effects
         PowerTornado,
         
         HouseAppear,
-        HouseDisappear
+        HouseDisappear,
+        
+        MusicBase,
+        MusicNature,
+        MusicHuman
     }
 
     public interface ISoundManager

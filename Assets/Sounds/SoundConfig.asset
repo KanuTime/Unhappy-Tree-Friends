@@ -67,3 +67,12 @@ MonoBehaviour:
   - Type: 17
     Audio: {fileID: 8300000, guid: a84d0bafa3d78459d89470d63c0ae199, type: 3}
     Volume: 1
+  - Type: 18
+    Audio: {fileID: 8300000, guid: 3dcf9903de85e4ef689b77bebcf3efb1, type: 3}
+    Volume: 1
+  - Type: 19
+    Audio: {fileID: 8300000, guid: 7265800cef21645fc8e5f73b8b8443ca, type: 3}
+    Volume: 1
+  - Type: 20
+    Audio: {fileID: 8300000, guid: 5f12ec405e2c3486fabcd7fd52cb7e99, type: 3}
+    Volume: 1
