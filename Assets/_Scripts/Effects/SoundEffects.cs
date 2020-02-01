@@ -23,7 +23,7 @@ namespace _Scripts.Effects
         private void Play(SoundEntry soundEntry)
         {
             var audioSource = GetAvailableAudioSource();
-            audioSource.PlayOneShot(soundEntry.Audio);
+            audioSource.PlayOneShot(soundEntry.Audio, soundEntry.Volume);
         }
         
         private AudioSource GetAvailableAudioSource()
