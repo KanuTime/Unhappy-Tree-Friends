@@ -19,3 +19,4 @@ MonoBehaviour:
     type: 3}
   _grassland: {fileID: -7263110765252413797, guid: d015ff7c4b13b9640b3fd99eae297207,
     type: 3}
+  _desert: {fileID: -278007950903227851, guid: ad5b0e3f0a587d346a0dfabb4cd5e051, type: 3}
