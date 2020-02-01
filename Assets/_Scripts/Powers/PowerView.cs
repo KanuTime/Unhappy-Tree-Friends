@@ -26,7 +26,7 @@ namespace _Scripts.Powers
         protected override void Install()
         {
             _oldParent = _transform.parent;
-            _transform.parent = _canvas.transform;
+            _transform.SetParent(_canvas.transform);
 
             Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType, _text);
             Container.BindInterfacesTo<PowerPresenter>().AsSingle();
@@ -35,7 +35,7 @@ namespace _Scripts.Powers
         public override void ResetView()
         {
             if (_oldParent)
-                _transform.parent = _oldParent;
+                _transform.SetParent(_oldParent);
         }
     }
 }
