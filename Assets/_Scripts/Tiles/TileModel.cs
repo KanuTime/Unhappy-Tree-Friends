@@ -9,24 +9,22 @@ namespace _Scripts.Tiles
         Vector2Int Position { get; }
         IReactiveProperty<EnvironmentType> Type { get; }
         IReactiveProperty<int> Intensity(Faction faction);
-        IReactiveProperty<int> Humanity { get; }
-        IReactiveProperty<int> Nature { get; }
     }
     
     public class TileModel : ITileModel
     {
         public Vector2Int Position { get; }
         public IReactiveProperty<EnvironmentType> Type { get; } = new ReactiveProperty<EnvironmentType>();
-        public IReactiveProperty<int> Humanity { get; } = new ReactiveProperty<int>();
-        public IReactiveProperty<int> Nature { get; } = new ReactiveProperty<int>();
-        public IReactiveProperty<int> Intensity(Faction faction) => faction == Faction.Humans ? Humanity : Nature;
+        private readonly IReactiveProperty<int> _humanity = new ReactiveProperty<int>();
+        private readonly IReactiveProperty<int> _nature = new ReactiveProperty<int>();
+        public IReactiveProperty<int> Intensity(Faction faction) => faction == Faction.Humans ? _humanity : _nature;
 
         public TileModel(Vector2Int position, EnvironmentType type, int humans, int nature)
         {
             Position = position;
             Type.Value = type;
-            Humanity.Value = humans;
-            Nature.Value = nature;
+            _humanity.Value = humans;
+            _nature.Value = nature;
         }
     }
 }
