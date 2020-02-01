@@ -11,6 +11,7 @@ namespace _Scripts.Powers
     {
         [Inject] private IMousePositionController _mousePositionController;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
+        [Inject] private IConsequenceData _consequenceData;
 
         public override void Initialize()
         {
@@ -21,9 +22,18 @@ namespace _Scripts.Powers
 
         private void ApplyConsequence(ITileModel tileModel)
         {
-            // TODO: choose consequence from config
-            var consequence = ConsequenceType.Earthquake;
-            Debug.Log($"Applying consequence: {consequence}");
+            var selectedPower = _selectedPowerModel.SelectedPower.Value;
+            var clickedEnvironmentType = tileModel.Type.Value;
+
+            foreach (var consequenceSetup in _consequenceData.Consequences)
+            {
+                if (consequenceSetup._power == selectedPower && consequenceSetup._environment == clickedEnvironmentType)
+                {
+                    Debug.Log($"Applying consequence: {consequenceSetup._consequence}");
+                }
+            }
+
+            
         }
     }
 }
