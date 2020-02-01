@@ -36,6 +36,11 @@ namespace _Scripts.Tiles
             
             Container.BindInterfacesTo<GrowthSystem>().AsTransient().WithArguments(Faction.Humans);
             Container.BindInterfacesTo<GrowthSystem>().AsTransient().WithArguments(Faction.Nature);
+            
+            Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Humans);
+            Container.BindInterfacesTo<SpreadSystem>().AsTransient().WithArguments(Faction.Nature);
+            
+            
         }
     }
 }
