@@ -257,9 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acf7d433b074f139aa97ca6080b2dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seaTile: {fileID: 0}
-  _swampTile: {fileID: 0}
-  _desertTile: {fileID: 0}
   _humans:
   - {fileID: 8263966861602171527}
   - {fileID: 1929725520207374665}
@@ -283,7 +280,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8711056029530508566
 GameObject:
