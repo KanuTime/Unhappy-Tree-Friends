@@ -12,12 +12,10 @@ namespace _Scripts.Powers
         [Inject] private ISelectedPowerModel _selectedPowerModel;
 
         [Inject] private Button _button;
-        [Inject] private Text _text;
         [Inject] private PowerType _type;
 
         public override void Initialize()
         {
-            _text.text = _type.ToString();
             _button.OnClickAsObservable().Subscribe(OnButtonClick).AddTo(_disposer);
         }
 

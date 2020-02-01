@@ -28,8 +28,8 @@ namespace _Scripts.Powers
             _oldParent = _transform.parent;
             _transform.SetParent(_canvas.transform);
 
-            Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType, _text);
-            Container.BindInterfacesTo<PowerPresenter>().AsSingle();
+            Container.BindInterfacesTo<PowerController>().AsSingle().WithArguments(_button, _powerType);
+            Container.BindInterfacesTo<PowerPresenter>().AsSingle().WithArguments(_button, _powerType, _text);
         }
 
         public override void ResetView()
