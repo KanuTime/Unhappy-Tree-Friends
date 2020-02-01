@@ -19,6 +19,7 @@ MonoBehaviour:
   - Faction: 1
     Position: {x: 3, y: 3}
     Intensity: 1
+  _spreadMaximum: 0
   _humanGrowth:
   - Degree: 1
     TimeTilNextStage: 5
@@ -28,6 +29,28 @@ MonoBehaviour:
     TimeTilNextStage: 15
   - Degree: 4
     TimeTilNextStage: 20
+  _humanAllyInfluence:
+  - AllyIntensity: 1
+    SpreadFactor: 0.1
+  - AllyIntensity: 2
+    SpreadFactor: 0.3
+  - AllyIntensity: 3
+    SpreadFactor: 0.5
+  - AllyIntensity: 4
+    SpreadFactor: 0.7
+  - AllyIntensity: 5
+    SpreadFactor: 1
+  _humanEnvironmentBase:
+  - Environment: 0
+    SpreadBase: 10
+  - Environment: 1
+    SpreadBase: 15
+  - Environment: 2
+    SpreadBase: 5
+  - Environment: 3
+    SpreadBase: 10
+  - Environment: 4
+    SpreadBase: 10
   _natureGrowth:
   - Degree: 1
     TimeTilNextStage: 7
@@ -37,5 +60,25 @@ MonoBehaviour:
     TimeTilNextStage: 20
   - Degree: 4
     TimeTilNextStage: 25
-  _humanSpread: []
-  _natureSpread: []
+  _natureAllyInfluence:
+  - AllyIntensity: 1
+    SpreadFactor: 0.1
+  - AllyIntensity: 2
+    SpreadFactor: 0.2
+  - AllyIntensity: 3
+    SpreadFactor: 0.3
+  - AllyIntensity: 4
+    SpreadFactor: 0.4
+  - AllyIntensity: 5
+    SpreadFactor: 0.6
+  _natureEnvironmentBase:
+  - Environment: 0
+    SpreadBase: 10
+  - Environment: 1
+    SpreadBase: 10
+  - Environment: 2
+    SpreadBase: 15
+  - Environment: 3
+    SpreadBase: 5
+  - Environment: 4
+    SpreadBase: 10

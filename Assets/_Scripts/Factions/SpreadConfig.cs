@@ -23,18 +23,27 @@ namespace _Scripts.Factions
     }
 
     [Serializable]
-    public class SpreadSetup
+    public class AllySpreadInfluence
     {
-        public EnvironmentType OwnEnvironment;
         public int AllyIntensity;
-        public float SpreadIncreasePerSecond;
+        public float SpreadFactor;
+    }
+    
+    [Serializable]
+    public class EnvironmentSpreadFactor
+    {
+        public EnvironmentType Environment;
+        public float SpreadBase;
     }
 
     public interface ISpreadData
     {
         IEnumerable<StartPoint> StartPoints { get; }
+        float SpreadMaximum { get; }
+
         float GrowthDuration(Faction faction, int degree);
-        float SpreadIncreasePerSecond(Faction faction, EnvironmentType environment, int intensity);
+        float AllySpreadInfluence(Faction faction, int intensity);
+        float EnvironmentSpreadBase(Faction faction, EnvironmentType environment);
     }
     
     [CreateAssetMenu(menuName = "Configs/Spread")]
@@ -43,22 +52,36 @@ namespace _Scripts.Factions
         [SerializeField] private List<StartPoint> _spawnPoints;
         public IEnumerable<StartPoint> StartPoints => _spawnPoints;
 
+        [SerializeField] private float _spreadMaximum = 100;
+        public float SpreadMaximum => _spreadMaximum;
+        
+        [Header("Humans")]
         [SerializeField] private List<GrowthSetup> _humanGrowth;
+        [SerializeField] private List<AllySpreadInfluence> _humanAllyInfluence;
+        [SerializeField] private List<EnvironmentSpreadFactor> _humanEnvironmentBase;
+        
+        [Header("Nature")]
         [SerializeField] private List<GrowthSetup> _natureGrowth;
-
-        [SerializeField] private List<SpreadSetup> _humanSpread;
-        [SerializeField] private List<SpreadSetup> _natureSpread;
+        [SerializeField] private List<AllySpreadInfluence> _natureAllyInfluence;
+        [SerializeField] private List<EnvironmentSpreadFactor> _natureEnvironmentBase;
         
         public float GrowthDuration(Faction faction, int degree)
         {
             return (faction == Faction.Humans ? _humanGrowth : _natureGrowth).Single(entry => entry.Degree == degree).TimeTilNextStage;
         }
         
-        public float SpreadIncreasePerSecond(Faction faction, EnvironmentType environment, int allyIntensity)
+        public float AllySpreadInfluence(Faction faction, int allyIntensity)
         {
-            var setup = (faction == Faction.Humans ? _humanSpread : _natureSpread)
-                .SingleOrDefault(entry => entry.OwnEnvironment == environment && entry.AllyIntensity == allyIntensity);
-            return setup?.SpreadIncreasePerSecond ?? 0f;
+            var setup = (faction == Faction.Humans ? _humanAllyInfluence : _natureAllyInfluence)
+                .SingleOrDefault(entry => entry.AllyIntensity == allyIntensity);
+            return setup?.SpreadFactor ?? 0f;
+        }
+
+        public float EnvironmentSpreadBase(Faction faction, EnvironmentType environment)
+        {
+            var setup = (faction == Faction.Humans ? _humanEnvironmentBase : _natureEnvironmentBase)
+                .SingleOrDefault(entry => entry.Environment == environment);
+            return setup?.SpreadBase ?? 0f;
         }
 
         public override void InstallBindings()

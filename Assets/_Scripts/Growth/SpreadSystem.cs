@@ -25,19 +25,17 @@ namespace _Scripts.Growth
         
         public void Tick()
         {
-            if (_spreadIntensity >= 100f)
+            if (_spreadIntensity >= _data.SpreadMaximum)
                 return;
             
             foreach (var adjacent in _grid.AdjacentTiles(_model.Position))
             {
-                if (adjacent.Intensity(_faction).Value <= 0)
-                    return;
-                
-                var spread = _data.SpreadIncreasePerSecond(_faction, _model.Type.Value, _model.Intensity(_faction).Value);
-                _spreadIntensity += spread * Time.deltaTime;
+                var baseValue = _data.EnvironmentSpreadBase(_faction, adjacent.Type.Value);
+                var factor = _data.AllySpreadInfluence(_faction, adjacent.Intensity(_faction).Value);
+                _spreadIntensity += baseValue * factor * Time.deltaTime;
             }
             
-            if (_spreadIntensity >= 100f)
+            if (_spreadIntensity >= _data.SpreadMaximum)
                 _spreadingStarted.OnNext(_faction);
         }
     }
