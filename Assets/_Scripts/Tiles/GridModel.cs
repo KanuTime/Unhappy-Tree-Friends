@@ -7,7 +7,7 @@ namespace _Scripts.Tiles
 {
     public interface IGridModel
     {
-        IObservable<ITileModel> ClickedOnTile { get; }
+        
     }
     
     public class GridModel : IGridModel, IInitializable
@@ -17,15 +17,13 @@ namespace _Scripts.Tiles
         [Inject] private IGridEdit _gridEdit;
         [Inject] private IViewFactory<TileView> _viewFactory;
         
-        private readonly ISubject<ITileModel> _clickedOnTile = new Subject<ITileModel>();
-        public IObservable<ITileModel> ClickedOnTile => _clickedOnTile;
-        
         public void Initialize()
         {
             var tiles = _gridEdit.Tiles;
             foreach (var tile in tiles)
             {
-                _viewFactory.Create(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tile.Value);
+                var tileModel = new TileModel(tile.Key, tile.Value);
+                _viewFactory.Create(new Vector3(tile.Key.x - K_offset, 0, tile.Key.y - K_offset), tileModel);
             }
         }
     }

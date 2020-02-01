@@ -12,15 +12,16 @@ namespace _Scripts.Tiles
         [SerializeField] private GameObject _desertTile;
         [SerializeField] private GameObject _mountainTile;
 
-        [Inject] private EnvironmentType _type;
+        [Inject] private ITileModel _model;
+        public ITileModel Model => _model;
         
         protected override void Install()
         {
-            _seaTile.SetActive(_type == EnvironmentType.Sea);
-            _grasslandTile.SetActive(_type == EnvironmentType.Grassland);
-            _swampTile.SetActive(_type == EnvironmentType.Swamp);
-            _desertTile.SetActive(_type == EnvironmentType.Desert);
-            _mountainTile.SetActive(_type == EnvironmentType.Mountain);
+            _seaTile.SetActive(_model.Type.Value == EnvironmentType.Sea);
+            _grasslandTile.SetActive(_model.Type.Value == EnvironmentType.Grassland);
+            _swampTile.SetActive(_model.Type.Value == EnvironmentType.Swamp);
+            _desertTile.SetActive(_model.Type.Value == EnvironmentType.Desert);
+            _mountainTile.SetActive(_model.Type.Value == EnvironmentType.Mountain);
         }
     }
 }

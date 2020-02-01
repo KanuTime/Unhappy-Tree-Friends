@@ -11,7 +11,7 @@ namespace _Scripts
         
         public override void Initialize()
         {
-            _mousePosition.Clicked.Subscribe(Debug.Log).AddTo(_disposer);
+            _mousePosition.Clicked.Subscribe(model => Debug.Log(model.Position)).AddTo(_disposer);
         }
     }
 }
