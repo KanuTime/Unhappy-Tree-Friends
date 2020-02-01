@@ -13,6 +13,7 @@ namespace _Scripts.Tiles
     public interface IGridModel
     {
         IEnumerable<ITileModel> AdjacentTiles(Vector2Int position);
+        IEnumerable<ITileModel> Tiles { get; }
     }
     
     public class GridModel : Subscription, IGridModel
@@ -96,5 +97,7 @@ namespace _Scripts.Tiles
 
             return adjacentTiles;
         }
+
+        public IEnumerable<ITileModel> Tiles => _tiles.Values;
     }
 }

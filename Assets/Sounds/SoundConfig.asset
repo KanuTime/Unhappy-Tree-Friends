@@ -16,7 +16,7 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 751ce730376e7450b9c4fb4da07f9512, type: 3}
     Volume: 1
   _TileCreateDesert:
-    Audio: {fileID: 8300000, guid: a7dfb4930cd524835b08d28ac501dbd5, type: 3}
+    Audio: {fileID: 8300000, guid: 8ff7f59a8866a4ec1b2f3e0962e71a1f, type: 3}
     Volume: 1
   _TileCreateGrass:
     Audio: {fileID: 8300000, guid: a986fc8d5c1b44b149699432a62b941a, type: 3}
@@ -37,7 +37,7 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 996802ac55312440498d5fc71c1c659e, type: 3}
     Volume: 1
   _TileCreateWater:
-    Audio: {fileID: 8300000, guid: 5eb4c82974f134a87917bc0cfb0e6615, type: 3}
+    Audio: {fileID: 8300000, guid: b91e1ec1c77654dc1b569b61853df632, type: 3}
     Volume: 1
   _TileDestroyHumans:
     Audio: {fileID: 8300000, guid: 3a4baa4cba0284063b4af558c56ebd25, type: 3}
@@ -47,4 +47,4 @@ MonoBehaviour:
     Volume: 1
   _UISelectTile:
     Audio: {fileID: 8300000, guid: e92406ca86d1948429ee0f8a3d2e310e, type: 3}
-    Volume: 1
+    Volume: 0.3
