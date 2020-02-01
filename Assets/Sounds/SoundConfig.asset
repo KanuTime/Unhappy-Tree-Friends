@@ -46,5 +46,17 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: ef868cfb8e6e44005a2bcba84f161b92, type: 3}
     Volume: 1
   _UISelectTile:
-    Audio: {fileID: 8300000, guid: e92406ca86d1948429ee0f8a3d2e310e, type: 3}
+    Audio: {fileID: 8300000, guid: f7df9b90fbca147078d4193f517365e6, type: 3}
     Volume: 0.3
+  _Power_Bees:
+    Audio: {fileID: 8300000, guid: c7720d0de064b453399104fb1422e800, type: 3}
+    Volume: 1
+  _Power_Earthquake:
+    Audio: {fileID: 8300000, guid: 3751c5aeba31749ce98229258130e151, type: 3}
+    Volume: 1
+  _Power_Flood:
+    Audio: {fileID: 8300000, guid: 1ad87fd8053a440ef9e6f71e6c113170, type: 3}
+    Volume: 0.8
+  _Power_Tornado:
+    Audio: {fileID: 8300000, guid: 2b6b4eb7825fc4aabb7b17483095211a, type: 3}
+    Volume: 1
