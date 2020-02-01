@@ -3,27 +3,41 @@ using UnityEngine;
 
 namespace _Scripts.Tiles
 {
-    public class GridView : MonoBehaviour
+    public interface IGrid
+    {
+        IReadOnlyDictionary<Vector2Int, TileView> Tiles { get; }
+    }
+    
+    public class GridView : MonoBehaviour, IGrid
     {
         [SerializeField] private Transform _bottomLeftCorner;
 
-        private void OnValidate()
+        private Dictionary<Vector2Int, TileView> _tiles;
+        public IReadOnlyDictionary<Vector2Int, TileView> Tiles
         {
-            var minCol = _bottomLeftCorner.position.x;
-            var minRow = _bottomLeftCorner.position.z;
-
-            var dictionary = new Dictionary<Index, TileView>();
-
-            var children = GetComponentsInChildren<TileView>();
-            foreach (var child in children)
+            get
             {
-                var col = Mathf.FloorToInt(child.transform.position.x - minCol);
-                var row = Mathf.FloorToInt(child.transform.position.z - minRow);
+                if (_tiles != null)
+                    return _tiles;
                 
-                dictionary.Add(new Index(row, col), child);
+                _tiles = new Dictionary<Vector2Int, TileView>();
+                
+                var minCol = _bottomLeftCorner.position.x;
+                var minRow = _bottomLeftCorner.position.z;
+
+                var children = GetComponentsInChildren<TileView>();
+                foreach (var child in children)
+                {
+                    var col = Mathf.FloorToInt(child.transform.position.x - minCol);
+                    var row = Mathf.FloorToInt(child.transform.position.z - minRow);
+                    var position = new Vector2Int(row, col);
+                
+                    _tiles.Add(position, child);
+                    child.Position = position;
+                }
+
+                return _tiles;
             }
-            
-            Debug.Log($"Dictionary contains {dictionary.Count} elements");
-        }
+        } 
     }
 }

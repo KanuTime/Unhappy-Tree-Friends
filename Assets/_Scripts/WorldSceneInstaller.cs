@@ -13,6 +13,8 @@ namespace _Scripts
         public override void InstallBindings()
         {
             Container.BindInstance(_camera);
+            Container.Bind<IGrid>().FromInstance(_grid);
+            
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
         }

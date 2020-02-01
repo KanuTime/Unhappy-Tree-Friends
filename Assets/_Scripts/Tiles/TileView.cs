@@ -21,5 +21,7 @@ namespace _Scripts.Tiles
             _desertTile.SetActive(_type == EnvironmentType.Desert);
             _mountainTile.SetActive(_type == EnvironmentType.Mountain);
         }
+        
+        public Vector2Int Position { get; set; }
     }
 }
