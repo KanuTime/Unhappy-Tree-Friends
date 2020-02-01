@@ -37,11 +37,6 @@ namespace _Scripts
                 if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
                     _clicked.OnNext(tile.Model);
             }
-            else
-            {
-                if (Input.GetMouseButtonDown(0))
-                    _clicked.OnNext(null);
-            }
         }
     }
 }
