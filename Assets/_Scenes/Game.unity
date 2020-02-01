@@ -237,7 +237,7 @@ MonoBehaviour:
   _tileLayer:
     serializedVersion: 2
     m_Bits: 256
-  _grid: {fileID: 250779813939229031, guid: 2e21177bebcee14499c824c0cd235af7, type: 3}
+  gridEdit: {fileID: 250779813939229031, guid: 2e21177bebcee14499c824c0cd235af7, type: 3}
 --- !u!114 &652265530
 MonoBehaviour:
   m_ObjectHideFlags: 0
