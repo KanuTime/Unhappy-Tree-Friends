@@ -10,7 +10,6 @@ namespace _Scripts.Tiles
     public class TileView : View
     {
         [SerializeField] private GameObject _seaTile;
-        [SerializeField] private GameObject _swampTile;
 
         [SerializeField] private List<GameObject> _humans;
         [SerializeField] private List<GameObject> _nature;
@@ -23,7 +22,6 @@ namespace _Scripts.Tiles
             Container.Bind<ITileModel>().FromInstance(_model);
             
             if (_seaTile != null) _seaTile.SetActive(_model.Type.Value == EnvironmentType.Sea);
-            if (_swampTile != null) _swampTile.SetActive(_model.Type.Value == EnvironmentType.Swamp);
             
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_humans, Faction.Humans);
             Container.BindInterfacesTo<IntensityPresenter>().AsTransient().WithArguments(_nature, Faction.Nature);

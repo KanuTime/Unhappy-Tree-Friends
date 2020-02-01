@@ -15,6 +15,7 @@ namespace _Scripts.Utility
         [SerializeField] private MountainView _mountain;
         [SerializeField] private GrasslandView _grassland;
         [SerializeField] private DesertView _desert;
+        [SerializeField] private SwampView _swamp;
         
         public override void InstallBindings()
         {
@@ -23,6 +24,7 @@ namespace _Scripts.Utility
             BindViewFactory(_mountain);
             BindViewFactory(_grassland);
             BindViewFactory(_desert);
+            BindViewFactory(_swamp);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component
