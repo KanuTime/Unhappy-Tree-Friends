@@ -24,9 +24,6 @@ namespace _Scripts
         
         public void Tick()
         {
-            if (!Input.GetMouseButtonDown(0))
-                return;
-            
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, 100f, _tileLayer))
             {

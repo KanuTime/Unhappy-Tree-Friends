@@ -9,8 +9,17 @@ namespace _Scripts.Tiles
         IReadOnlyReactiveProperty<EnvironmentType> Type { get; }
     }
     
-    public class TileModel
+    public class TileModel : ITileModel
     {
-        
+        public Vector2Int Position { get; }
+
+        private readonly IReactiveProperty<EnvironmentType> _type = new ReactiveProperty<EnvironmentType>();
+        public IReadOnlyReactiveProperty<EnvironmentType> Type => _type;
+
+        public TileModel(Vector2Int position, EnvironmentType type)
+        {
+            Position = position;
+            _type.Value = type;
+        }
     }
 }
