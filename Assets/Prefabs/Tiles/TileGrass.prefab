@@ -345,6 +345,8 @@ MonoBehaviour:
   - {fileID: 1112923536387141278}
   - {fileID: 6390795392149170350}
   - {fileID: 8070317132548684353}
+  _animator: {fileID: 7774773160399250404}
+  _duration: 1
 --- !u!65 &4205342245055407440
 BoxCollider:
   m_ObjectHideFlags: 0

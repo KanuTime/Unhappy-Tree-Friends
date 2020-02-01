@@ -327,6 +327,8 @@ MonoBehaviour:
   - {fileID: 7775278616513429485}
   - {fileID: 5010086926575144751}
   - {fileID: 5010086925464876655}
+  _animator: {fileID: 6715705657356092980}
+  _duration: 1
 --- !u!65 &3455387968982392131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -352,7 +354,7 @@ GameObject:
   - component: {fileID: 2280874209632696130}
   - component: {fileID: 1153950726243877098}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +626,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2.93
       minScalar: 1
       maxCurve:
         serializedVersion: 2
