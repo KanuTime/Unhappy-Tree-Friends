@@ -25,6 +25,8 @@ namespace _Scripts
 
             Container.BindInterfacesTo<SelectedPowerModel>().AsSingle();
             Container.BindInterfacesTo<PowerSelectionSystem>().AsSingle().WithArguments(_canvas);
+
+            Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
         }
     }
 }
