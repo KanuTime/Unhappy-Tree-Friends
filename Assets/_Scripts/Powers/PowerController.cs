@@ -2,25 +2,26 @@
 using _Scripts.Utility;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace _Scripts.Powers
 {
     public class PowerController : Subscription
     {
-        [Inject] private IMousePositionController mousePositionController;
-
-        private PowerType selectedPower;
+        [Inject] private Button _button;
+        [Inject] private Text _text;
+        [Inject] private PowerType _type;
 
         public override void Initialize()
         {
-            mousePositionController.Clicked.Subscribe(OnTileClicked).AddTo(_disposer);
+            _text.text = _type.ToString();
+            _button.OnClickAsObservable().Subscribe(OnButtonClick).AddTo(_disposer);
         }
 
-        private void OnTileClicked(ITileModel tileView)
+        private void OnButtonClick()
         {
-            Debug.Log($"Tile of type {tileView.Type} clicked");
-
+            Debug.Log($"Button with type {_type} clicked.");
         }
     }
 }

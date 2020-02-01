@@ -1,5 +1,7 @@
+using _Scripts.Powers;
 using _Scripts.Tiles;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace _Scripts.Utility
@@ -8,10 +10,12 @@ namespace _Scripts.Utility
     public class PrefabInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private TileView _tile;
+        [FormerlySerializedAs("_powerSelectionView")] [SerializeField] private PowerView _powerView;
         
         public override void InstallBindings()
         {
             BindViewFactory(_tile);
+            BindViewFactory(_powerView);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component

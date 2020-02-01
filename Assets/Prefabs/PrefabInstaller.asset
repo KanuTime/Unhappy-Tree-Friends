@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PrefabInstaller
   m_EditorClassIdentifier: 
   _tile: {fileID: -9021242286489167943, guid: 2ea05f99f830efc4dbd4061c1b3a95aa, type: 3}
+  _powerSelectionView: {fileID: 6157231322850707309, guid: 59b60ce3f78e00047bc1797e4390b529,
+    type: 3}
