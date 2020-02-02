@@ -23,6 +23,13 @@ namespace _Scripts.Factions
     }
 
     [Serializable]
+    public class GrowthFactor
+    {
+        public EnvironmentType Environment;
+        public float Factor;
+    }
+
+    [Serializable]
     public class AllySpreadInfluence
     {
         public int AllyIntensity;
@@ -41,6 +48,7 @@ namespace _Scripts.Factions
         IEnumerable<StartPoint> StartPoints { get; }
         float SpreadMaximum { get; }
 
+        float GrowthFactor(Faction faction, EnvironmentType type);
         float GrowthDuration(Faction faction, int degree);
         float AllySpreadInfluence(Faction faction, int intensity);
         float EnvironmentSpreadBase(Faction faction, EnvironmentType environment);
@@ -57,17 +65,25 @@ namespace _Scripts.Factions
         
         [Header("Humans")]
         [SerializeField] private List<GrowthSetup> _humanGrowth;
+        [SerializeField] private List<GrowthFactor> _humanGrowthFactors;
         [SerializeField] private List<AllySpreadInfluence> _humanAllyInfluence;
         [SerializeField] private List<EnvironmentSpreadFactor> _humanEnvironmentBase;
         
         [Header("Nature")]
         [SerializeField] private List<GrowthSetup> _natureGrowth;
+        [SerializeField] private List<GrowthFactor> _natureGrowthFactors;
         [SerializeField] private List<AllySpreadInfluence> _natureAllyInfluence;
         [SerializeField] private List<EnvironmentSpreadFactor> _natureEnvironmentBase;
         
         public float GrowthDuration(Faction faction, int degree)
         {
             return (faction == Faction.Humans ? _humanGrowth : _natureGrowth).Single(entry => entry.Degree == degree).TimeTilNextStage;
+        }
+
+        public float GrowthFactor(Faction faction, EnvironmentType type)
+        {
+            return (faction == Faction.Humans ? _humanGrowthFactors : _natureGrowthFactors)
+                .Single(entry => entry.Environment == type).Factor;
         }
         
         public float AllySpreadInfluence(Faction faction, int allyIntensity)

@@ -123,6 +123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaGeneration
       objectReference: {fileID: 0}
+    - target: {fileID: 8387933281055537652, guid: 527b8e91ef1e65c4cbcd3f010dc0e4ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 527b8e91ef1e65c4cbcd3f010dc0e4ae, type: 3}
 --- !u!4 &2412294795020926473 stripped
