@@ -1,5 +1,6 @@
 using _Scripts.Balance;
 using _Scripts.Effects;
+using _Scripts.Music;
 using _Scripts.Powers;
 using _Scripts.Tiles;
 using UnityEngine;
@@ -69,6 +70,8 @@ namespace _Scripts
             
             Container.BindInterfacesTo<BalanceModel>().AsSingle();
             Container.BindInterfacesTo<BalancePresenter>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
+
+            Container.BindInterfacesTo<MusicController>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
         }
     }
 }
