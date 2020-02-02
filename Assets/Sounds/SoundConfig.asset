@@ -29,7 +29,7 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 8dd88d53df9a94932a10ab4a7a48cf6e, type: 3}
     Volume: 1
   - Type: 5
-    Audio: {fileID: 8300000, guid: a013ef708061a4d95baabdf94b43f62d, type: 3}
+    Audio: {fileID: 8300000, guid: fa86ce3caf72d47919a44da2ee48eb2e, type: 3}
     Volume: 1
   - Type: 6
     Audio: {fileID: 8300000, guid: ca6f8a58eff1542ff8c6c5999b0a521c, type: 3}
@@ -62,7 +62,7 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 1ad87fd8053a440ef9e6f71e6c113170, type: 3}
     Volume: 1
   - Type: 17
-    Audio: {fileID: 8300000, guid: 2b6b4eb7825fc4aabb7b17483095211a, type: 3}
+    Audio: {fileID: 8300000, guid: 63ef4300f4dd74be68871d39c11a7920, type: 3}
     Volume: 1
   - Type: 18
     Audio: {fileID: 8300000, guid: 4486f67200a4d41afbf2d1b56704dd83, type: 3}
