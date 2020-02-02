@@ -68,13 +68,13 @@ MonoBehaviour:
     Audio: {fileID: 8300000, guid: 4486f67200a4d41afbf2d1b56704dd83, type: 3}
     Volume: 1
   - Type: 21
-    Audio: {fileID: 8300000, guid: 3dcf9903de85e4ef689b77bebcf3efb1, type: 3}
+    Audio: {fileID: 8300000, guid: 054156bdd4b934c64974cc60c9e28dc7, type: 3}
     Volume: 1
   - Type: 22
-    Audio: {fileID: 8300000, guid: 7265800cef21645fc8e5f73b8b8443ca, type: 3}
+    Audio: {fileID: 8300000, guid: c96b72f499cdb41c3abb4bef03200410, type: 3}
     Volume: 1
   - Type: 23
-    Audio: {fileID: 8300000, guid: 3dc6eb2de0259433e8d8fca3f3bfe0fc, type: 3}
+    Audio: {fileID: 8300000, guid: d1c78c74e55e34d9f9e6964f79719908, type: 3}
     Volume: 1
   - Type: 13
     Audio: {fileID: 8300000, guid: c57ef423af70d43b09516445d1f17623, type: 3}
