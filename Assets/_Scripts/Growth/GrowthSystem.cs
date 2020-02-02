@@ -25,7 +25,7 @@ namespace _Scripts.Growth
             if (degree == 0 || degree >= 5)
                 return;
 
-            var timeTilNextStage = _data.GrowthDuration(_faction, degree);
+            var timeTilNextStage = _data.GrowthDuration(_faction, degree) * _data.GrowthFactor(_faction, _model.Type.Value);
             Observable.Timer(TimeSpan.FromSeconds(timeTilNextStage))
                 .Where(_ => _model.Intensity(_faction).Value == degree).Take(1)
                 .Subscribe(IncreaseIntensity).AddTo(_disposer);

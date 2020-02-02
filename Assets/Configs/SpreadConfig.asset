@@ -113,6 +113,17 @@ MonoBehaviour:
     TimeTilNextStage: 70
   - Degree: 4
     TimeTilNextStage: 90
+  _humanGrowthFactors:
+  - Environment: 0
+    Factor: 1
+  - Environment: 1
+    Factor: 1
+  - Environment: 2
+    Factor: 1
+  - Environment: 3
+    Factor: 1
+  - Environment: 4
+    Factor: 1
   _humanAllyInfluence:
   - AllyIntensity: 1
     SpreadFactor: 1
@@ -144,6 +155,17 @@ MonoBehaviour:
     TimeTilNextStage: 80
   - Degree: 4
     TimeTilNextStage: 100
+  _natureGrowthFactors:
+  - Environment: 0
+    Factor: 1
+  - Environment: 1
+    Factor: 1
+  - Environment: 2
+    Factor: 1
+  - Environment: 3
+    Factor: 1
+  - Environment: 4
+    Factor: 1
   _natureAllyInfluence:
   - AllyIntensity: 1
     SpreadFactor: 0.7

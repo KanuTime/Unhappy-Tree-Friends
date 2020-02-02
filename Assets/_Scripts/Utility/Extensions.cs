@@ -1,5 +1,7 @@
 using System;
 using UniRx;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.Utility
 {
@@ -19,6 +21,11 @@ namespace _Scripts.Utility
         {
             for (var i = 0; i < amount; i++)
                 action(i);
+        }
+
+        public static float RandomValue(this Vector2 range)
+        {
+            return range.x + Random.value * (range.y - range.x);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace _Scripts
         [SerializeField] private SoundEffects _soundEffects;
         [SerializeField] private Slider _natureIntensity;
         [SerializeField] private Slider _humanIntensity;
+        [SerializeField] private Text _manaText;
         
         [Header("Buttons")]
         [SerializeField] private Button _powerWindButton;
@@ -31,7 +32,7 @@ namespace _Scripts
         [SerializeField] private Button _powerWaterButton;
         [SerializeField] private Image _powerWaterImage;
         [SerializeField] private Image _powerWaterCooldownImage;
-
+        
         [Header("Config")] 
         [SerializeField] private float _environmentChangeDelay;
         
@@ -73,6 +74,9 @@ namespace _Scripts
             Container.BindInterfacesTo<BalancePresenter>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
 
             Container.BindInterfacesTo<MusicController>().AsSingle().WithArguments(_natureIntensity, _humanIntensity);
+            
+            Container.BindInterfacesTo<ManaModel>().AsSingle();
+            Container.BindInterfacesTo<ManaPresenter>().AsSingle().WithArguments(_manaText);
         }
     }
 }
