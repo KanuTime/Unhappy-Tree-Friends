@@ -14,8 +14,12 @@ namespace _Scripts.Balance
 
         public override void Initialize()
         {
-            _balance.NatureIntensity.Subscribe(value => _nature.value = 1f * value / _balance.MaxAmount).AddTo(_disposer);
-            _balance.HumansIntensity.Subscribe(value => _human.value = 1f * value / _balance.MaxAmount).AddTo(_disposer);
+            _balance.HumansIntensity.CombineLatest(_balance.NatureIntensity, (h, n) => 1f * h / (h + n))
+                .Subscribe(value =>
+                {
+                    _human.value = value;
+                    _nature.value = 1 - value;
+                }).AddTo(_disposer);
         }
     }
 }
