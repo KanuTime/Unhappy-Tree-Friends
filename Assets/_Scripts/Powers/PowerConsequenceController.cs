@@ -12,6 +12,7 @@ namespace _Scripts.Powers
         [Inject] private IMousePositionController _mousePositionController;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private IConsequenceData _consequenceData;
+        [Inject] private ISoundManager _soundManager;
 
         private readonly Subject<(ConsequenceType, ITileModel)> _subject = new Subject<(ConsequenceType, ITileModel)>();
         public IObservable<(ConsequenceType, ITileModel)> ConsequenceTileTrigger => _subject;
@@ -26,14 +27,23 @@ namespace _Scripts.Powers
         private void ApplyConsequence(ITileModel tileModel)
         {
             if (tileModel == null)
+            {
+                _soundManager.PlaySound(SoundType.UiSelectTileFail);
                 return;
+            }
 
             var selectedPower = _selectedPowerModel.SelectedPower.Value;
             var clickedEnvironmentType = tileModel.Type.Value;
 
             if (selectedPower == PowerType.None) Debug.Log("No Power Selected");
 
-            if (!_selectedPowerModel.IsAvailable(selectedPower)) return;
+            if (!_selectedPowerModel.IsAvailable(selectedPower))
+            {
+                _soundManager.PlaySound(SoundType.UiSelectTileFail);
+                return;
+            }
+
+            _soundManager.PlaySound(SoundType.UiSelectTile);
 
             foreach (var consequenceSetup in _consequenceData.Consequences)
             {

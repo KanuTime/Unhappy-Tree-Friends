@@ -31,7 +31,7 @@ namespace _Scripts.Effects
         DestroyNature,
         
         UiSelectTile,
-        UISelectTileFail,
+        UiSelectTileFail,
     
         PowerReady,
         PowerBees,
