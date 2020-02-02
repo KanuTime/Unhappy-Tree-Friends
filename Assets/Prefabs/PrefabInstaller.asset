@@ -25,3 +25,4 @@ MonoBehaviour:
   _fire: {fileID: 7112432804672737726, guid: bf0fbdfab2b9b8047aeb6e132803040e, type: 3}
   _animalAttack: {fileID: -6052376483089225029, guid: 3a47d8cdbefaa0945ace08711800781f,
     type: 3}
+  _pollen: {fileID: 4634411492968651259, guid: 4bb5e11a356e29449b3e50f75c084b41, type: 3}

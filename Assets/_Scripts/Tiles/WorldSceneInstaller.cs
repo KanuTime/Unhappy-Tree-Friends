@@ -42,6 +42,8 @@ namespace _Scripts
         [SerializeField] private float _environmentChangeDelay;
         [SerializeField] private bool _generateWorldRandomly;
         [SerializeField] private Vector2Int _dimensions;
+        [SerializeField] private int _humanSpawnPoints;
+        [SerializeField] private int _natureSpawnPoints;
         
         public override void InstallBindings()
         {
@@ -52,8 +54,8 @@ namespace _Scripts
             Container.BindInterfacesTo<CameraDragMovementSystem>().AsSingle().WithArguments(_panningLayer, _cameraMovementSpeed * 3);
 
             if (_generateWorldRandomly)
-                Container.BindInterfacesTo<TileGenerator>().AsSingle().WithArguments(_dimensions.x, _dimensions.y);
-            else Container.Bind<IGridEdit>().FromInstance(gridEdit);
+                Container.BindInterfacesTo<TileGenerator>().AsSingle().WithArguments(_dimensions.x, _dimensions.y, _humanSpawnPoints, _natureSpawnPoints);
+            else Container.BindInterfacesTo<PredefinedMapProvider>().AsSingle().WithArguments(gridEdit);
             
             Container.BindInterfacesTo<GridModel>().AsSingle();
             

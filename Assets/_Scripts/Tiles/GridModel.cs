@@ -20,8 +20,7 @@ namespace _Scripts.Tiles
     {
         private const int K_offset = 5;
         
-        [Inject] private IGridEdit _gridEdit;
-        [Inject] private ISpreadData _spreadData;
+        [Inject] private IGridProvider _gridData;
         
         [Inject] private IViewFactory<MountainView> _mountainFactory;
         [Inject] private IViewFactory<GrasslandView> _grassFactory;
@@ -35,10 +34,10 @@ namespace _Scripts.Tiles
         
         public override void Initialize()
         {
-            var tiles = _gridEdit.Tiles;
+            var tiles = _gridData.Tiles;
             foreach (var tile in tiles)
             {
-                var startPoints = _spreadData.StartPoints.Where(point => point.Position == tile.Key).ToList();
+                var startPoints = _gridData.StartPoints.Where(point => point.Position == tile.Key).ToList();
                 var humanityDegree = startPoints.Where(point => point.Faction == Faction.Humans).Sum(point => point.Intensity); 
                 var natureDegree = startPoints.Where(point => point.Faction == Faction.Nature).Sum(point => point.Intensity); 
                 
