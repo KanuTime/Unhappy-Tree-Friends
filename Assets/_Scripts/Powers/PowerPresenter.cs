@@ -1,4 +1,5 @@
-﻿using _Scripts.Utility;
+using _Scripts.Utility;
+using _Scripts.Effects;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ namespace _Scripts.Powers
         [Inject] private PowerType _powerType;
         [Inject] private ISelectedPowerModel _selectedPowerModel;
         [Inject] private IPowerData _powerData;
+        [Inject] private ISoundManager _soundManager;
 
         private Color _originalColor;
 
@@ -34,6 +36,11 @@ namespace _Scripts.Powers
         public void Tick()
         {
             _cooldownImage.fillAmount = _selectedPowerModel.Cooldown(_powerType) / _powerData.Cooldown(_powerType);
+            
+            if (_cooldownImage.fillAmount == 0)
+            {
+                _soundManager.PlaySound(SoundType.PowerReady);
+            }
         }
     }
 }
