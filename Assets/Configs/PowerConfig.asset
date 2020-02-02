@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _earthCooldown: 3
   _waterCooldown: 5
-  _windCooldown: 1
+  _windCooldown: 7
