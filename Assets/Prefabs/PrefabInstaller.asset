@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77186e75d8543fb8789cbac51f6efea, type: 3}
   m_Name: PrefabInstaller
   m_EditorClassIdentifier: 
-  _powerView: {fileID: 6157231322850707309, guid: 59b60ce3f78e00047bc1797e4390b529,
-    type: 3}
   _mountain: {fileID: -5544489205604745092, guid: 34daeb94cd7e0234da883388584dd885,
     type: 3}
   _grassland: {fileID: -7263110765252413797, guid: d015ff7c4b13b9640b3fd99eae297207,
@@ -25,3 +23,5 @@ MonoBehaviour:
     type: 3}
   _flood: {fileID: 1025214248013305111, guid: 24bb4ca188cde484c81dcf1a7218f074, type: 3}
   _fire: {fileID: 7112432804672737726, guid: bf0fbdfab2b9b8047aeb6e132803040e, type: 3}
+  _animalAttack: {fileID: -6052376483089225029, guid: 3a47d8cdbefaa0945ace08711800781f,
+    type: 3}
