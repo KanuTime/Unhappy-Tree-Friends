@@ -26,15 +26,22 @@ namespace _Scripts
         [SerializeField] private Button _powerWindButton;
         [SerializeField] private Image _powerWindImage;
         [SerializeField] private Image _powerWindCooldownImage;
+        [SerializeField] private Text _powerWindCost;
+        
         [SerializeField] private Button _powerEarthButton;
         [SerializeField] private Image _powerEarthImage;
         [SerializeField] private Image _powerEarthCooldownImage;
+        [SerializeField] private Text _powerEarthCost;
+        
         [SerializeField] private Button _powerWaterButton;
         [SerializeField] private Image _powerWaterImage;
         [SerializeField] private Image _powerWaterCooldownImage;
+        [SerializeField] private Text _powerWaterCost;
         
         [Header("Config")] 
         [SerializeField] private float _environmentChangeDelay;
+        [SerializeField] private bool _generateWorldRandomly;
+        [SerializeField] private Vector2Int _dimensions;
         
         public override void InstallBindings()
         {
@@ -43,11 +50,14 @@ namespace _Scripts
             
             Container.BindInterfacesTo<CameraKeyMovementSystem>().AsSingle().WithArguments(_cameraMovementSpeed);
             Container.BindInterfacesTo<CameraDragMovementSystem>().AsSingle().WithArguments(_panningLayer, _cameraMovementSpeed * 3);
-            
-            Container.Bind<IGridEdit>().FromInstance(gridEdit);
-            Container.BindInterfacesTo<SoundEffects>().FromInstance(_soundEffects);
+
+            if (_generateWorldRandomly)
+                Container.BindInterfacesTo<TileGenerator>().AsSingle().WithArguments(_dimensions.x, _dimensions.y);
+            else Container.Bind<IGridEdit>().FromInstance(gridEdit);
             
             Container.BindInterfacesTo<GridModel>().AsSingle();
+            
+            Container.BindInterfacesTo<SoundEffects>().FromInstance(_soundEffects);
             
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
@@ -62,7 +72,11 @@ namespace _Scripts
                 .WithArguments(_powerEarthButton, PowerType.Earth, _powerEarthImage, _powerEarthCooldownImage);
             Container.BindInterfacesTo<PowerPresenter>().AsCached()
                 .WithArguments(_powerWaterButton, PowerType.Water, _powerWaterImage, _powerWaterCooldownImage);
-
+            
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerWindCost, PowerType.Wind);
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerEarthCost, PowerType.Earth);
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerWaterCost, PowerType.Water);
+            
             Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
             
