@@ -3,6 +3,7 @@ using _Scripts.Factions;
 using _Scripts.Growth;
 using _Scripts.Powers;
 using _Scripts.Utility;
+using DefaultNamespace;
 using UnityEngine;
 using Zenject;
 
@@ -39,6 +40,10 @@ namespace _Scripts.Tiles
             
             Container.BindInterfacesTo<ManaCreationSystem>().AsSingle();
             Container.BindInterfacesTo<ManaCreationPresenter>().AsSingle().WithArguments(_manaGeneration);
+            
+            Container.BindInterfacesTo<TornadoSystem>().AsSingle();
+            Container.BindInterfacesTo<FloodSystem>().AsSingle();
+            Container.BindInterfacesTo<FireSystem>().AsSingle();
         }
     }
 }
