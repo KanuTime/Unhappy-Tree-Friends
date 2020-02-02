@@ -18,7 +18,7 @@ MonoBehaviour:
     Volume: 1
   - Type: 1
     Audio: {fileID: 8300000, guid: 8ff7f59a8866a4ec1b2f3e0962e71a1f, type: 3}
-    Volume: 0.6
+    Volume: 0.3
   - Type: 2
     Audio: {fileID: 8300000, guid: a986fc8d5c1b44b149699432a62b941a, type: 3}
     Volume: 1
@@ -30,7 +30,7 @@ MonoBehaviour:
     Volume: 1
   - Type: 5
     Audio: {fileID: 8300000, guid: fa86ce3caf72d47919a44da2ee48eb2e, type: 3}
-    Volume: 1
+    Volume: 0.8
   - Type: 6
     Audio: {fileID: 8300000, guid: ca6f8a58eff1542ff8c6c5999b0a521c, type: 3}
     Volume: 1
