@@ -335,6 +335,8 @@ MonoBehaviour:
   _powerWaterCooldownImage: {fileID: 1028260800}
   _powerWaterCost: {fileID: 58741705}
   _environmentChangeDelay: 1
+  _generateWorldRandomly: 1
+  _dimensions: {x: 5, y: 5}
 --- !u!114 &652265530
 MonoBehaviour:
   m_ObjectHideFlags: 0

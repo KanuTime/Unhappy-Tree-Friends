@@ -40,6 +40,8 @@ namespace _Scripts
         
         [Header("Config")] 
         [SerializeField] private float _environmentChangeDelay;
+        [SerializeField] private bool _generateWorldRandomly;
+        [SerializeField] private Vector2Int _dimensions;
         
         public override void InstallBindings()
         {
@@ -48,11 +50,14 @@ namespace _Scripts
             
             Container.BindInterfacesTo<CameraKeyMovementSystem>().AsSingle().WithArguments(_cameraMovementSpeed);
             Container.BindInterfacesTo<CameraDragMovementSystem>().AsSingle().WithArguments(_panningLayer, _cameraMovementSpeed * 3);
-            
-            Container.Bind<IGridEdit>().FromInstance(gridEdit);
-            Container.BindInterfacesTo<SoundEffects>().FromInstance(_soundEffects);
+
+            if (_generateWorldRandomly)
+                Container.BindInterfacesTo<TileGenerator>().AsSingle().WithArguments(_dimensions.x, _dimensions.y);
+            else Container.Bind<IGridEdit>().FromInstance(gridEdit);
             
             Container.BindInterfacesTo<GridModel>().AsSingle();
+            
+            Container.BindInterfacesTo<SoundEffects>().FromInstance(_soundEffects);
             
             Container.BindInterfacesTo<MousePositionController>().AsSingle().WithArguments(_tileLayer);
             Container.BindInterfacesTo<MousePositionLogger>().AsSingle();
