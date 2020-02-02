@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9349342072da4e2b9952b63d3ae21d84, type: 3}
   m_Name: ManaConfig
   m_EditorClassIdentifier: 
-  _startValue: 100
+  _startValue: 220
   _startDelay: {x: 0, y: 0}
-  _timeTilManaGrant: {x: 5, y: 20}
-  _manaGrantedPerTree: 1
-  _costsForEarth: 20
-  _costsForWind: 30
-  _costsForWater: 40
+  _timeTilManaGrant: {x: 4, y: 14}
+  _manaGrantedPerTree: 2
+  _costsForEarth: 30
+  _costsForWind: 40
+  _costsForWater: 20
