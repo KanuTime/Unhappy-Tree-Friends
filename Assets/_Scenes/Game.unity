@@ -336,7 +336,9 @@ MonoBehaviour:
   _powerWaterCost: {fileID: 58741705}
   _environmentChangeDelay: 1
   _generateWorldRandomly: 1
-  _dimensions: {x: 5, y: 5}
+  _dimensions: {x: 6, y: 6}
+  _humanSpawnPoints: 7
+  _natureSpawnPoints: 7
 --- !u!114 &652265530
 MonoBehaviour:
   m_ObjectHideFlags: 0
