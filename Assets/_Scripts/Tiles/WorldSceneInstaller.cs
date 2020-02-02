@@ -26,12 +26,17 @@ namespace _Scripts
         [SerializeField] private Button _powerWindButton;
         [SerializeField] private Image _powerWindImage;
         [SerializeField] private Image _powerWindCooldownImage;
+        [SerializeField] private Text _powerWindCost;
+        
         [SerializeField] private Button _powerEarthButton;
         [SerializeField] private Image _powerEarthImage;
         [SerializeField] private Image _powerEarthCooldownImage;
+        [SerializeField] private Text _powerEarthCost;
+        
         [SerializeField] private Button _powerWaterButton;
         [SerializeField] private Image _powerWaterImage;
         [SerializeField] private Image _powerWaterCooldownImage;
+        [SerializeField] private Text _powerWaterCost;
         
         [Header("Config")] 
         [SerializeField] private float _environmentChangeDelay;
@@ -62,7 +67,11 @@ namespace _Scripts
                 .WithArguments(_powerEarthButton, PowerType.Earth, _powerEarthImage, _powerEarthCooldownImage);
             Container.BindInterfacesTo<PowerPresenter>().AsCached()
                 .WithArguments(_powerWaterButton, PowerType.Water, _powerWaterImage, _powerWaterCooldownImage);
-
+            
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerWindCost, PowerType.Wind);
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerEarthCost, PowerType.Earth);
+            Container.BindInterfacesTo<PowerCostPresenter>().AsCached().WithArguments(_powerWaterCost, PowerType.Water);
+            
             Container.BindInterfacesTo<PowerConsequenceController>().AsSingle();
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
             
