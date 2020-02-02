@@ -38,8 +38,11 @@ MonoBehaviour:
       Environment: 0
       Intensity: 1
   - Environment: 2
-    ConsequenceType: 0
-    Effects: []
+    ConsequenceType: 5
+    Effects:
+    - Effect: 3
+      Environment: 0
+      Intensity: 1
   - Environment: 2
     ConsequenceType: 5
     Effects:
@@ -125,5 +128,8 @@ MonoBehaviour:
       Environment: 0
       Intensity: 1
   - Environment: 4
-    ConsequenceType: 0
-    Effects: []
+    ConsequenceType: 6
+    Effects:
+    - Effect: 3
+      Environment: 0
+      Intensity: 1

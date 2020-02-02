@@ -16,7 +16,7 @@ MonoBehaviour:
   - _consequence: 1
     _environment: 0
     _power: 1
-  - _consequence: 0
+  - _consequence: 5
     _environment: 2
     _power: 1
   - _consequence: 2
@@ -55,6 +55,6 @@ MonoBehaviour:
   - _consequence: 3
     _environment: 3
     _power: 2
-  - _consequence: 0
+  - _consequence: 6
     _environment: 4
     _power: 2
