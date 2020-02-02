@@ -44,6 +44,8 @@ namespace _Scripts.Tiles
             Container.BindInterfacesTo<TornadoSystem>().AsSingle();
             Container.BindInterfacesTo<FloodSystem>().AsSingle();
             Container.BindInterfacesTo<FireSystem>().AsSingle();
+            Container.BindInterfacesTo<AnimalAttackSystem>().AsSingle();
+
         }
     }
 }
