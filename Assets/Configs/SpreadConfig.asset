@@ -106,24 +106,24 @@ MonoBehaviour:
   _spreadMaximum: 700
   _humanGrowth:
   - Degree: 1
-    TimeTilNextStage: 50
+    TimeTilNextStage: 80
   - Degree: 2
-    TimeTilNextStage: 100
+    TimeTilNextStage: 140
   - Degree: 3
-    TimeTilNextStage: 150
+    TimeTilNextStage: 200
   - Degree: 4
-    TimeTilNextStage: 240
+    TimeTilNextStage: 300
   _humanGrowthFactors:
   - Environment: 0
-    Factor: 1
+    Factor: 1.2
   - Environment: 1
-    Factor: 1
+    Factor: 1.5
   - Environment: 2
-    Factor: 1
+    Factor: 0.8
   - Environment: 3
-    Factor: 1
+    Factor: 0.9
   - Environment: 4
-    Factor: 1
+    Factor: 1.1
   _humanAllyInfluence:
   - AllyIntensity: 1
     SpreadFactor: 1
@@ -148,20 +148,20 @@ MonoBehaviour:
     SpreadBase: 8
   _natureGrowth:
   - Degree: 1
-    TimeTilNextStage: 50
+    TimeTilNextStage: 80
   - Degree: 2
-    TimeTilNextStage: 120
+    TimeTilNextStage: 160
   - Degree: 3
-    TimeTilNextStage: 180
+    TimeTilNextStage: 230
   - Degree: 4
-    TimeTilNextStage: 270
+    TimeTilNextStage: 350
   _natureGrowthFactors:
   - Environment: 0
-    Factor: 1
+    Factor: 1.3
   - Environment: 1
     Factor: 1
   - Environment: 2
-    Factor: 1
+    Factor: 1.3
   - Environment: 3
     Factor: 1
   - Environment: 4
