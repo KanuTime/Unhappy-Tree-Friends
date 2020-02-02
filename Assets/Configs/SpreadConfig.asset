@@ -106,13 +106,13 @@ MonoBehaviour:
   _spreadMaximum: 700
   _humanGrowth:
   - Degree: 1
-    TimeTilNextStage: 40
+    TimeTilNextStage: 50
   - Degree: 2
-    TimeTilNextStage: 80
+    TimeTilNextStage: 100
   - Degree: 3
-    TimeTilNextStage: 130
+    TimeTilNextStage: 150
   - Degree: 4
-    TimeTilNextStage: 200
+    TimeTilNextStage: 240
   _humanGrowthFactors:
   - Environment: 0
     Factor: 1
@@ -150,11 +150,11 @@ MonoBehaviour:
   - Degree: 1
     TimeTilNextStage: 50
   - Degree: 2
-    TimeTilNextStage: 100
+    TimeTilNextStage: 120
   - Degree: 3
-    TimeTilNextStage: 150
+    TimeTilNextStage: 180
   - Degree: 4
-    TimeTilNextStage: 220
+    TimeTilNextStage: 270
   _natureGrowthFactors:
   - Environment: 0
     Factor: 1
