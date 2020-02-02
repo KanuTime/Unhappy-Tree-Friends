@@ -218,6 +218,8 @@ RectTransform:
   - {fileID: 2072671913}
   - {fileID: 1584861107}
   - {fileID: 951506271}
+  - {fileID: 1616432593}
+  - {fileID: 1646276680}
   m_Father: {fileID: 1101243576}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -421,12 +423,12 @@ PrefabInstance:
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 326
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -96.3
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
@@ -609,8 +611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 202}
-  m_SizeDelta: {x: 530.6, y: 44.4}
+  m_AnchoredPosition: {x: 41, y: -261}
+  m_SizeDelta: {x: 776.9, y: 42.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138507885
 MonoBehaviour:
@@ -643,7 +645,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trees generate mana
+  m_Text: Your powers cost mana, trees generate that for you...
 --- !u!222 &1138507886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -686,8 +688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: 322}
-  m_SizeDelta: {x: 530.6, y: 44.4}
+  m_AnchoredPosition: {x: 42, y: 240}
+  m_SizeDelta: {x: 728.5, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409199898
 MonoBehaviour:
@@ -720,7 +722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use your powers to save nature
+  m_Text: ... so use your powers to save nature!
 --- !u!222 &1409199899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -876,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -96.3
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
@@ -926,6 +928,161 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1584861106}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1616432592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616432593}
+  - component: {fileID: 1616432595}
+  - component: {fileID: 1616432594}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1616432593
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616432592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6, y: 1.7499, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410949780}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38, y: -412}
+  m_SizeDelta: {x: 1087.8, y: 55.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1616432594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616432592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ... and every power reacts differently based on the environment you cast
+    it in
+--- !u!222 &1616432595
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616432592}
+  m_CullTransparentMesh: 0
+--- !u!1 &1646276679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646276680}
+  - component: {fileID: 1646276682}
+  - component: {fileID: 1646276681}
+  m_Layer: 5
+  m_Name: Text (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1646276680
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646276679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6, y: 1.7499, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410949780}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 42, y: 370.4}
+  m_SizeDelta: {x: 1065.2, y: 42.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1646276681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646276679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You are the god of nature - and nature is in dire need of repair...
+--- !u!222 &1646276682
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646276679}
+  m_CullTransparentMesh: 0
 --- !u!1001 &2072671912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -996,12 +1153,12 @@ PrefabInstance:
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -257.8
+      value: -311
       objectReference: {fileID: 0}
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -96.3
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 6157231322850707305, guid: 59b60ce3f78e00047bc1797e4390b529,
         type: 3}

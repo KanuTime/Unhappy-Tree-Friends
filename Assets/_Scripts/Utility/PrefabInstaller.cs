@@ -22,6 +22,7 @@ namespace _Scripts.Utility
         [SerializeField] private FloodView _flood;
         [SerializeField] private FireView _fire;
         [SerializeField] private AnimalAttackView _animalAttack;
+        [SerializeField] private PollenView _pollen;
         
         public override void InstallBindings()
         {
@@ -35,6 +36,7 @@ namespace _Scripts.Utility
             BindViewFactory(_flood);
             BindViewFactory(_fire);
             BindViewFactory(_animalAttack);
+            BindViewFactory(_pollen);
         }
 
         private void BindViewFactory<T>(T prefab) where T : Component
