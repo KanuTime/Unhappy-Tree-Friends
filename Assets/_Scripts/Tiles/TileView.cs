@@ -38,6 +38,7 @@ namespace _Scripts.Tiles
             Container.BindInterfacesTo<TileSoundSystem>().AsSingle();
             
             Container.BindInterfacesTo<ManaCreationSystem>().AsSingle();
+            Container.BindInterfacesTo<ManaCreationPresenter>().AsSingle().WithArguments(_manaGeneration);
         }
     }
 }

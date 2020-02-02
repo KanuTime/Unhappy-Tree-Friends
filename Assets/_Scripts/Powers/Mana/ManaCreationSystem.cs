@@ -30,7 +30,7 @@ namespace _Scripts.Powers
 
         private void IntensityChanged(int intensity)
         {
-            for (var i = 0; i <= 5; i++)
+            for (var i = 1; i <= 5; i++)
             {
                 var existingCreation = GetCreation(i);
                 if (intensity < i && existingCreation != null) // Tree killed
