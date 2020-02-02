@@ -79,3 +79,6 @@ MonoBehaviour:
   - Type: 13
     Audio: {fileID: 8300000, guid: c57ef423af70d43b09516445d1f17623, type: 3}
     Volume: 0.3
+  - Type: 19
+    Audio: {fileID: 8300000, guid: 1689e011693424c358bf40ae708aab55, type: 3}
+    Volume: 0.3

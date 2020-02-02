@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Effects;
 using _Scripts.Factions;
 using _Scripts.Tiles;
 using _Scripts.Utility;
@@ -12,6 +13,7 @@ namespace _Scripts.Growth
         [Inject] private ITileModel _model;
         [Inject] private ISpreadData _data;
         [Inject] private Faction _faction;
+        [Inject] private ISoundManager _soundManager;
         
         public override void Initialize()
         {
@@ -41,6 +43,8 @@ namespace _Scripts.Growth
 
             if (_faction == Faction.Humans)
             {
+                _soundManager.PlaySound(SoundType.HouseAppear);
+
                 _model.Intensity(_faction).Value++;
                 _model.Intensity(Faction.Nature).Value--;
             }

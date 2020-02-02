@@ -14,6 +14,7 @@ namespace _Scripts.Effects
     {
         UniRx.IObservable<(ITileModel, EnvironmentType)> EnvironmentChangeEffects { get; }
         UniRx.IObservable<(ITileModel, Faction, int)> KillEffects { get; }
+        UniRx.IObservable<(ITileModel, Faction, int)> SpawnEffects { get; }
     }
     
     public class EffectSystem : Subscription, IEffectSystem
@@ -68,6 +69,9 @@ namespace _Scripts.Effects
                 case EffectType.KillHuman:
                     _killEffects.OnNext((tile, Faction.Humans, effectEntry.Intensity));
                     break;
+                case EffectType.PlantTree:
+                    _spawnEffects.OnNext((tile, Faction.Nature, effectEntry.Intensity));
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -78,5 +82,8 @@ namespace _Scripts.Effects
         
         private readonly ISubject<(ITileModel, Faction, int)> _killEffects = new Subject<(ITileModel, Faction, int)>();
         public UniRx.IObservable<(ITileModel, Faction, int)> KillEffects => _killEffects;
+        
+        private readonly ISubject<(ITileModel, Faction, int)> _spawnEffects = new Subject<(ITileModel, Faction, int)>();
+        public UniRx.IObservable<(ITileModel, Faction, int)> SpawnEffects => _spawnEffects;
     }
 }
