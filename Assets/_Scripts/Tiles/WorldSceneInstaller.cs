@@ -66,6 +66,7 @@ namespace _Scripts
             Container.BindInterfacesTo<EffectSystem>().AsSingle();
             
             Container.BindInterfacesTo<KillingEffectSystem>().AsSingle();
+            Container.BindInterfacesTo<SpawnEffectSystem>().AsSingle();
             Container.BindInterfacesTo<EnvironmentChangeEffectSystem>().AsSingle().WithArguments(_environmentChangeDelay);
             
             Container.BindInterfacesTo<BalanceModel>().AsSingle();

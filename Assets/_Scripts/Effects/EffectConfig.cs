@@ -10,7 +10,8 @@ namespace _Scripts.Effects
     {
         EnvironmentChange,
         KillTree,
-        KillHuman
+        KillHuman,
+        PlantTree
     }
 
     [Serializable]
