@@ -35,9 +35,11 @@ namespace _Scripts.Powers
 
         public void Tick()
         {
+            var wasAvailable = _selectedPowerModel.IsAvailable(_powerType);
+
             _cooldownImage.fillAmount = _selectedPowerModel.Cooldown(_powerType) / _powerData.Cooldown(_powerType);
             
-            if (_cooldownImage.fillAmount == 0)
+            if (!wasAvailable && _selectedPowerModel.IsAvailable(_powerType))
             {
                 _soundManager.PlaySound(SoundType.PowerReady);
             }
